@@ -1,13 +1,21 @@
 import React from 'react';
 import { HomeView } from './pages/home';
 
-
-function App() {
+export const App = () => {
   return (
-    <div className="App">
+    <div className='App'>
       <HomeView/>
     </div>
-  );
+  )
 }
 
-export default App;
+
+// function App() {
+//     return (
+//       <div className="App">
+//         <HomeView/>
+//     </div>
+//   );
+// }
+
+// export default App;

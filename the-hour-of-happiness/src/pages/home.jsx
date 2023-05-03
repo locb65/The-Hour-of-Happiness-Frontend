@@ -1,13 +1,14 @@
 import React from "react";
 import { SearchBar } from "./components/searchBar";
 import { Header } from "./components/header";
+import { HappyHourList } from "./components/happyHourListView";
 
 export const HomeView = () => {
     return (
         <div>
             <Header/>
             <div>
-                <SearchBar/>
+                <HappyHourList/>
             </div>
         </div>
     );
