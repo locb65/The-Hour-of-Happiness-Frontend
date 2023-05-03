@@ -1,0 +1,17 @@
+.header-container {
+    background-image: url('./img/Header.jpg');
+    display: flex;
+    justify-content: space-around;
+    height: 9.5em;
+    color: rgb(227, 231, 238);
+    background-size: auto;
+    background-position: initial;
+
+}
+
+.header-title {
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
