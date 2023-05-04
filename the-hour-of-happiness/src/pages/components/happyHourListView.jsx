@@ -30,9 +30,20 @@ export const HappyHourList = () => {
             </div>
             <div className="restaurant-info-container">
               <h2>{restaurant.name}</h2>
-              <p>Address: {restaurant.address}</p>
-              <p>Phone: {restaurant.phone}</p>
-              <p>Happy Hour: {restaurant.happyHour}</p>
+              <p>Address: 
+              {restaurant.address.street}, 
+              {restaurant.address.city}, 
+              {restaurant.address.state} 
+              {restaurant.address.zipCode}</p>
+              <p> Phone: {restaurant.phone}</p>
+              {/* checking to see if happy hour data all exists if not prints only the ones availble */}
+              {restaurant.happyHour && (
+                <>
+                  <p> Happy Hour: {restaurant.happyHour.day}</p>
+                  <p> Time: {restaurant.happyHour.time} </p>
+                  <p> Deals: {restaurant.happyHour.deals} </p>
+                </>
+              )}
               <p>
                 <a className="menu-link" href={restaurant.menu}>
                   View Menu
