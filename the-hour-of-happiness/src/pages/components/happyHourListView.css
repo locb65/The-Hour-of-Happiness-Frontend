@@ -7,13 +7,13 @@
   .restaurant-container {
     display: flex;
     align-items: center;
-    margin: 20px;
+    margin: 1.25rem;
   }
   
   .restaurant-img-container {
-    width: 200px;
-    height: 200px;
-    margin-right: 20px;
+    width: 17.5rem;
+    height: 17.5rem;
+    margin-right: 1.5rem;
     overflow: hidden;
   }
   
@@ -26,6 +26,7 @@
   .restaurant-info-container {
     display: flex;
     flex-direction: column;
+    flex: 1
   }
   
   .menu-link {
@@ -35,4 +36,8 @@
   
   .menu-link:hover {
     text-decoration: underline;
+  }
+
+  .happyHour-details {
+    margin: 0.5rem 
   }
