@@ -1,6 +1,7 @@
 import React from "react";
 import Calendar from 'react-calendar'
 import 'react-calendar/dist/Calendar.css'
+import './verifyAge.css'
 
 // added age verification since this is based on alcholic beverages
 export const AgeVerificationForm = () => {

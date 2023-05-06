@@ -1,0 +1,35 @@
+.age-verification-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+}
+  
+.age-verification-container h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+ 
+.age-verification-container p {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+.calendar-wrapper {
+    margin-bottom: 1rem;
+}
+  
+.submit-dob {
+    background-color: #929292;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+}
+  
+  .submit-dob:hover {
+    background-color: #4D4D4D;
+}
