@@ -9,6 +9,7 @@ import { Link, useNavigate } from 'react-router-dom'
 export const AgeVerificationForm = () => {
     // state for DOB verification
     const [dob, setDob] = useState(new Date());
+    const [calendarDate, setCalendarDate] = useState(null)
     const navigate = useNavigate();
 
     const handleVerification = () => {
@@ -18,15 +19,19 @@ export const AgeVerificationForm = () => {
         const ageDifference = Date.now() - dob.getTime();
         // sets age from above to new date giving age of user
         const ageDate = new Date(ageDifference);
-        // calculates the age of the user based on years 
-        // uses 1900 as a base point as I doubt anyone is alive still that is born before 1900
-        const age = Math.abs(ageDate.getUTCFullYear() -1900);
+        // this will divide the age of the user by the number of seconds in a year giving a more accurate age
+        const age = Math.floor((new Date() - dob) / 31557600000);
         
         if (age <21) {
             navigate('/access-denied')
         } else {
             navigate('/login-choice')
         }
+    }
+
+    const handleCalendarChange = (date) => {
+        setCalendarDate(date);
+        setDob(date)
     }
 
     return (
@@ -37,9 +42,14 @@ export const AgeVerificationForm = () => {
                 <Calendar 
                 className="custom-calendar" 
                 value = {dob}
-                onChange = {setDob}
-                maxDate={new Date()}/>
+                onChange = {handleCalendarChange}
+                maxDate={new Date()}
+                />
+                
             </div>
+            {calendarDate && (
+                <p>Date of Birth: {calendarDate.toDateString()}</p>
+            )}
             <button 
             className="submit-dob" 
             type="submit"

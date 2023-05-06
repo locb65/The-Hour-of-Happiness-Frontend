@@ -78,3 +78,9 @@
     font-size: 16px !important;
     font-weight: bold !important;
 }
+
+.selected-day {
+    background-color: #ffffff;
+    color: #000000;
+    border-radius: 50%;
+  }

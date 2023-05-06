@@ -1,0 +1,17 @@
+.access-denied-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('https://iso.500px.com/wp-content/uploads/2014/07/hong-kong-cityscape1.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    color: #ffffff;
+}
+
+.link-to-home {
+    font-size: 2vw;
+    color: #ffffff;
+}
