@@ -3,20 +3,19 @@ import React from "react";
 export const Login = () => {
     return (
         <div className="login-container">
-            <h2>Login or Sign Up</h2>
-            <form>
-                <label>
+            <form className="login-form">
+                <label className="login-fields">
                     Email:
                     <input type="email" name="email" placeholder="Email" />
                 </label>
                 <br />
-                <label>
+                <label className="login-fields">
                     Password:
                     <input type="password" name="password" placeholder="Password" />
                 </label>
                 <br />
-                <button type="submit">Log In</button>
-                <button type="submit">Sign Up</button>
+                <button className="login-btns" type="submit">Log In</button>
+                <button className="login-btns" type="submit">Sign Up</button>
             </form>
         </div>
     )
