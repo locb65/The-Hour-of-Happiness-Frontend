@@ -1,4 +1,5 @@
 import React from "react";
+import './loginChoicePage.css'
 
 export const LoginChoice = () => {
     return (
