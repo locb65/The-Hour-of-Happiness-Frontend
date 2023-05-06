@@ -3,7 +3,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 80vh;
+    height: 50vh;
 }
   
 .age-verification-container h2 {
@@ -21,7 +21,7 @@
 }
   
 .submit-dob {
-    background-color: #929292;
+    background-color: transparent;
     color: #fff;
     border: none;
     border-radius: 4px;
@@ -31,5 +31,50 @@
 }
   
   .submit-dob:hover {
-    background-color: #4D4D4D;
+    background-color: #dadada;
+}
+
+
+.react-calendar {
+    background: transparent !important;
+    border: none !important;
+    color: #ffffff !important;
+    font-size: 16px !important;
+    font-weight: bold !important;
+}
+  
+.react-calendar__navigation {
+    background: transparent !important;
+    border: none !important;
+    color: #ffffff !important;
+    font-size: 16px !important;
+    font-weight: bold !important;
+}
+
+.react-calendar__navigation, button {
+    color: #ffffff;
+    font-size: 16px !important;
+    font-weight: bold !important;
+}
+  
+.react-calendar__month-view__days {
+    background: transparent !important;
+    border: none !important;
+    color: #ffffff !important;
+    font-size: 16px !important;
+    font-weight: bold !important;
+}
+  
+.react-calendar__tile {
+    background: transparent !important;
+    border: none !important;
+    color: #ffffff !important;
+    font-size: 16px !important;
+    font-weight: bold !important;
+}
+  
+.react-calendar__tile--now {
+    color: #ffffff !important;
+    font-size: 16px !important;
+    font-weight: bold !important;
 }

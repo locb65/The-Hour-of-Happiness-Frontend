@@ -1,5 +1,6 @@
 import React from 'react';
 import { AgeVerificationForm } from './components/verifyAge';
+import './welcomePage.css'
 
 export const WelcomePage = () => {
     return (
