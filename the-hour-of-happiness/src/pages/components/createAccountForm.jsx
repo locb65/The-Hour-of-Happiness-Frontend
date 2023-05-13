@@ -1,12 +1,15 @@
 import React, { useState } from 'react';
 import './createAccountForm.css';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 export const CreateAccount = () => {
     const [name, setName] = useState('')
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
+    // useNavigate = allows for navigation to routes from form submissions
+    const navigate = useNavigate();
 
     const handleSubmit = async(event) =>{
         event.preventDefault();
@@ -21,6 +24,8 @@ export const CreateAccount = () => {
                 'http://localhost:4000/accounts/restaurant-owners/new-owner', 
                 {name, email, password});
             console.log('Account Created: ', res.data)
+            // using navigate to reroute after an account is created successfully
+            navigate('/home')
         } catch (err) {
             console.log({error: 'Error creating account', err})
     }
