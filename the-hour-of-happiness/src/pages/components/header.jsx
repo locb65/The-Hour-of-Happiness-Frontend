@@ -1,6 +1,7 @@
 import React from "react";
 import './header.css'
 import { SearchBar } from "./searchBar";
+import { DropDownMenu } from "./dropDownMenu";
 
 export const Header = () => {
     return (
@@ -9,6 +10,7 @@ export const Header = () => {
             <div className="search-bar-container">
                 <SearchBar/>
             </div>
+            <DropDownMenu/>
         </div>
     )
 }
