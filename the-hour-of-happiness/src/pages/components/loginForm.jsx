@@ -1,5 +1,6 @@
 import React from "react";
 import './loginForm.css'
+import { Link } from 'react-router-dom'
 
 export const Login = () => {
     return (
@@ -16,7 +17,7 @@ export const Login = () => {
                 </label>
                 <br />
                 <button className="login-btns" type="submit">Log In</button>
-                <button className="login-btns" type="submit">Sign Up</button>
+                <Link to='/create-account'><button className="login-btns" type="submit">Sign Up</button></Link>
             </form>
         </div>
     )
