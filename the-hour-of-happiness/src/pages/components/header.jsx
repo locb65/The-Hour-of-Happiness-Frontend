@@ -9,8 +9,11 @@ export const Header = () => {
             <h1 className="header-title">Clink City</h1>
             <div className="search-bar-container">
                 <SearchBar/>
+                <div className="header-dropdown-container">
+                <DropDownMenu/>
             </div>
-            <DropDownMenu/>
+            </div>
+
         </div>
     )
 }

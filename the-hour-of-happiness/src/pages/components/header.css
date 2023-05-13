@@ -24,3 +24,8 @@
     align-self: flex-end;
     margin: 1rem;
 }
+
+.header-dropdown-container {
+    display: flex;
+    align-items: center;
+}
