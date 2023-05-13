@@ -1,29 +1,49 @@
+.login-form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 30rem;
+}
 .login-form {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   background-color: #b3b3b3;
   border: 1px solid #ccc;
-  padding: 20px;
-  border-radius: 5px;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-  max-width: 400px;
+  padding: 2em;
+  border-radius: 0.5em;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  max-width: 30rem;
   width: 100%;
 }
 
-.login-fields {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 10px;
-    width: 100%;
+.login-email-input-container,
+.login-password-input-container {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1em;
+}
+label {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 0.5em;
+}
+
+input[type="email"],
+input[type="password"] {
+    padding: 0.5em;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 0.5em;
+    background-color: #f0f0f0;
 }
 
 .login-btns {
     background-color: #929292;
     color: #fff;
     border: none;
-    border-radius: 5px;
+    border-radius: 0.5em;
     padding: 10px;
     margin-top: 10px;
     cursor: pointer;

@@ -1,0 +1,62 @@
+.create-account-form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 30rem;
+}
+  
+.create-account-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #b3b3b3;
+    border: 1px solid #ccc;
+    padding: 2em;
+    border-radius: 0.5em;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    max-width: 30rem;
+    width: 100%;
+
+}
+  
+.name-input-container,
+.email-input-container,
+.password-input-container,
+.verify-password-container {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1em;
+}
+  
+label {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 0.5em;
+}
+  
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    padding: 0.5em;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 0.5em;
+    background-color: #f0f0f0;
+}
+  
+.create-account-btn {
+    padding: 0.5em;
+    font-size: 1.2em;
+    background-color: #929292;
+    color: #fff;
+    border: none;
+    border-radius: 0.5em;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    width: 15em;
+}
+  
+  .create-account-btn:hover {
+    background-color: #4d4d4d;
+}

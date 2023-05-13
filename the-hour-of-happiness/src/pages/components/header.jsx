@@ -10,10 +10,9 @@ export const Header = () => {
             <div className="search-bar-container">
                 <SearchBar/>
                 <div className="header-dropdown-container">
-                <DropDownMenu/>
+                    <DropDownMenu/>
+                </div>
             </div>
-            </div>
-
         </div>
     )
 }

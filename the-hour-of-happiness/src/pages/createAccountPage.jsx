@@ -1,12 +1,10 @@
 import React from "react";
-import { CreateAccount } from "./components/createAccount";
+import { CreateAccount } from "./components/createAccountForm";
+import './createAccountPage.css'
 
 export const CreateAccountPage = () => {
     return (
-        <div>
-            <h1>
-                Please fill in the Fields Below.
-            </h1>
+        <div className="create-account-page-container">
             <CreateAccount/>
         </div>
     )
