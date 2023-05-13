@@ -25,7 +25,7 @@ export const CreateAccount = () => {
                 {name, email, password});
             console.log('Account Created: ', res.data)
             // using navigate to reroute after an account is created successfully
-            navigate('/home')
+            navigate('/login')
         } catch (err) {
             console.log({error: 'Error creating account', err})
     }
