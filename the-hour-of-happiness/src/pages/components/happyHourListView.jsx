@@ -21,7 +21,7 @@ export const HappyHourList = () => {
 
   return (
     <div className="restaurant-list-container">
-      <h2>Happy Hour</h2>
+      <h2>Happy Hour Locations</h2>
       <ul>
         {restaurants.map((restaurant) => (
           <li className="restaurant-container" key={restaurant.name}>

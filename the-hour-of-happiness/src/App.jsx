@@ -11,7 +11,7 @@ export const App = () => {
   return (
     <Routes>
       <Route path='/' element={<WelcomePage/>} />
-      {/* <Route path="/home" element={<HomeView />} /> */}
+      <Route path="/home" element={<HomeView />} />
       <Route path="/login" element={<LoginPage />} />
       <Route path="/login-choice" element={<LoginChoice />} />
       <Route path="/access-denied" element={<AccessDenied />} />
