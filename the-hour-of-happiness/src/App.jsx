@@ -5,6 +5,7 @@ import { LoginPage } from './pages/loginPage';
 import { WelcomePage } from './pages/welcomePage';
 import { AccessDenied } from './pages/accessDenied';
 import { Route, Routes} from 'react-router-dom'
+import { ProfilePage } from './pages/profilePage';
 
 
 export const App = () => {
@@ -15,6 +16,7 @@ export const App = () => {
       <Route path="/login" element={<LoginPage />} />
       <Route path="/login-choice" element={<LoginChoice />} />
       <Route path="/access-denied" element={<AccessDenied />} />
+      <Route path="/profile" element={<ProfilePage />} />
     </Routes>
   )
 }
