@@ -7,7 +7,9 @@ import { AccessDenied } from './pages/accessDenied';
 import { Route, Routes} from 'react-router-dom'
 import { ProfilePage } from './pages/profilePage';
 import { CreateAccountPage } from './pages/createAccountPage';
+import axios from 'axios';
 
+axios.defaults.baseURL = 'http://localhost:4000';
 
 export const App = () => {
   return (
