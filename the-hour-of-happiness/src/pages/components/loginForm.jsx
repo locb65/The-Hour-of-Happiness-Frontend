@@ -5,25 +5,27 @@ import axios from 'axios';
 
 
 
-export const Login = () => {
+export const Login = ({user, handleLogin}) => {
 
     const navigate = useNavigate();
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
 
-    // method for handling authentication request to backend server
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
             const res = await axios.post('/login', {email, password});
             if (res.status === 200) {
                 console.log(res.data)
-                navigate('/home')
+                handleLogin()
             }
         } catch (err) {
             console.error(err);
         }
     }
+
+
+    // method for handling authentication request to backend server
 
     return (
         <div className="login-form-container">
