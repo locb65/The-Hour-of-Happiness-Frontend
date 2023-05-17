@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { AgeVerificationForm } from './components/verifyAge';
 import './welcomePage.css'
-import { Link } from 'react-router-dom'
+
 
 export const WelcomePage = () => {
     return (

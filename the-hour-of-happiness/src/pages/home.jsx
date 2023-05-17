@@ -5,11 +5,8 @@ import { HappyHourList } from "./components/happyHourListView";
 
 export const HomeView = () => {
     return (
-        <div>
-            <Header/>
             <div>
                 <HappyHourList/>
             </div>
-        </div>
     );
 };
