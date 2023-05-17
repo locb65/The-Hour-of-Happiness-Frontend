@@ -1,13 +1,26 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import './dropDownMenu.css';
+import axios from 'axios'
 
 export const DropDownMenu = () => {
     const [isOpen, setIsOpen] = useState(false);
+    const navigate = useNavigate();
     // handler for toggling dropdown
     const toggleMenu = () =>{
         // sets isOpen to the opposite of its current value
         setIsOpen(!isOpen);
+    }
+
+    const handleLogout = async () => {
+        try {
+            const res = await axios.post('http://localhost:4000/logout')
+            if (res.status === 200) {
+                navigate('/home');
+            }
+        } catch (err) {
+            console.log(err)
+        }
     }
     return (
         <div className='dropdown-container'>
@@ -16,10 +29,11 @@ export const DropDownMenu = () => {
             </button>
             {isOpen && (
                 <ul className='dropdown-menu'>
-                    <Link to='/profile'><li>Profile</li></Link>
-                    <Link><li>Map</li></Link>
-                    <Link><li>Account</li></Link>
-                    <Link><li>Log out</li></Link>
+                    <Link to ='/login'><div><li>Sign In</li></div></Link>
+                    <Link to='/profile'><div><li>Profile</li></div></Link>
+                    <Link><div><li>Map</li></div></Link>
+                    <Link><div><li>Account</li></div></Link>
+                    <div onClick={handleLogout}><li>Log out</li></div>
                 </ul>
             )}
         </div>
