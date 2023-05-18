@@ -56,23 +56,23 @@ export const DropDownMenu = () => {
             </button>
             {isOpen && (
                 <ul className='dropdown-menu'>
-                    {!isAuthenticated && ( 
+                    {/* {!isAuthenticated && (  */}
                         <div onClick={handleSignIn}>
                             <li 
                             // onClick={handleSignIn}
                             >Sign In</li>
                         </div>
-                    )}
+                    {/* )} */}
                     <Link to='/profile'><div><li>Profile</li></div></Link>
                     <Link><div><li>Map</li></div></Link>
                     <Link><div><li>Account</li></div></Link>
-                    {isAuthenticated && (
+                    {/* {isAuthenticated && ( */}
                         <div onClick={handleLogout}> 
                             <li 
                             // onClick={handleLogout}
                             >Log out</li>
                         </div> 
-                    )} 
+                    {/* )}  */}
                 </ul>
             )}
         </div>

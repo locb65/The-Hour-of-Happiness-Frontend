@@ -5,7 +5,7 @@ import axios from 'axios';
 
 
 
-export const Login = ({user, handleLogin}) => {
+export const Login = ({ user, handleLogin }) => {
 
     const navigate = useNavigate();
     const [email, setEmail] = useState("")
@@ -17,10 +17,11 @@ export const Login = ({user, handleLogin}) => {
             const res = await axios.post('/login', {email, password});
             if (res.status === 200) {
                 console.log(res.data)
-                handleLogin()
+                handleLogin();
+                navigate('/home')
             }
         } catch (err) {
-            console.error(err);
+            console.log(err);
         }
     }
 
