@@ -5,7 +5,6 @@ import { Header } from "./components/header";
 export const ProfilePage = () =>{
     return (
         <div>
-            <Header/>
             <div className="profile-page-container"></div>
                 <ProfileHeader/>
         </div>

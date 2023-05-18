@@ -3,7 +3,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import './dropDownMenu.css';
 import axios from 'axios'
 
-export const DropDownMenu = ({user}) => {
+export const DropDownMenu = ({user, handleLogout}) => {
     const [isOpen, setIsOpen] = useState(false);
     const [isAuthenticated, setIsAuthenticated] = useState(false);
     const navigate = useNavigate();
@@ -16,27 +16,29 @@ export const DropDownMenu = ({user}) => {
         setIsOpen(!isOpen);
     }
 
-    useEffect(() => {
-        checkAuthentication();
-    }, []);
+    // useEffect(() => {
+    //     checkAuthentication();
+    // }, []);
 
-    const checkAuthentication = async () => {
-        try {
-            const res = await axios.get('http://localhost:4000/check-authentication', { withCredentials: true });
-            console.log(res.data)
-            setIsAuthenticated(res.data.authenticated);
-            console.log(isAuthenticated);
-        } catch (err) {
-            console.log(err);
-        }
-    };
+    // const checkAuthentication = async () => {
+    //     try {
+    //         const res = await axios.get('http://localhost:4000/check-authentication', { withCredentials: true });
+    //         console.log(res.data)
+    //         // setIsAuthenticated(res.data.authenticated);
+    //         // console.log(isAuthenticated);
+    //     } catch (err) {
+    //         console.log(err);
+    //     }
+    // };
 
-    const handleLogout = async () => {
+    const handleLogoutButton = async () => {
         try {
             const res = await axios.post('http://localhost:4000/logout')
             if (res.status === 200) {
-                navigate('/login');
-                console.log(isAuthenticated);
+                navigate('/home');
+                toggleMenu();
+                handleLogout() ;
+                // console.log(isAuthenticated);
             }
         } catch (err) {
             console.log(err)
@@ -45,7 +47,7 @@ export const DropDownMenu = ({user}) => {
 
     const handleSignIn = () => {
         navigate('/login');
-        console.log(isAuthenticated);
+        // console.log(isAuthenticated);
     }
 
 
@@ -67,7 +69,7 @@ export const DropDownMenu = ({user}) => {
                     <Link><div><li>Map</li></div></Link>
                     <Link><div><li>Account</li></div></Link>
                     {user && (
-                        <div onClick={handleLogout}> 
+                        <div onClick={handleLogoutButton}> 
                             <li 
                             // onClick={handleLogout}
                             >Log out</li>

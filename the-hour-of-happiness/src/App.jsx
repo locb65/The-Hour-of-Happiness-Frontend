@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { HomeView } from './pages/home';
 import { LoginChoice } from './pages/loginChoicePage';
 import { LoginPage } from './pages/loginPage';
@@ -20,14 +20,23 @@ export const App = () => {
   const handleLogin = () => {
     // Perform login logic
     setUser(true); // Set the user state to true after successful login
-    console.log('user')
   };
+
+  const handleLogout = () => {
+    // Perform logout logic
+    setUser(false); // Set the user state to false after logout
+    alert('Logout Successful');
+  }; 
+
+  useEffect(() => {
+    console.log(user);
+  }, [user]);
 
   const isHeaderVisible = ['/home', '/profile'].includes(window.location.pathname);
 
   return (
     <div>
-    {isHeaderVisible && <Header user={user} />}
+    {isHeaderVisible && <Header user={user} handleLogout = {handleLogout} />}
     <Routes>
       <Route path='/' element={<WelcomePage/>} />
       <Route path="/home" element={<HomeView />} />
