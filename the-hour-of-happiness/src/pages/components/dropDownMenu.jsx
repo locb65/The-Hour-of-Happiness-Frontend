@@ -3,7 +3,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import './dropDownMenu.css';
 import axios from 'axios'
 
-export const DropDownMenu = () => {
+export const DropDownMenu = ({user}) => {
     const [isOpen, setIsOpen] = useState(false);
     const [isAuthenticated, setIsAuthenticated] = useState(false);
     const navigate = useNavigate();
@@ -56,23 +56,23 @@ export const DropDownMenu = () => {
             </button>
             {isOpen && (
                 <ul className='dropdown-menu'>
-                    {/* {!isAuthenticated && (  */}
+                    {!user && ( 
                         <div onClick={handleSignIn}>
                             <li 
                             // onClick={handleSignIn}
                             >Sign In</li>
                         </div>
-                    {/* )} */}
+                    )}
                     <Link to='/profile'><div><li>Profile</li></div></Link>
                     <Link><div><li>Map</li></div></Link>
                     <Link><div><li>Account</li></div></Link>
-                    {/* {isAuthenticated && ( */}
+                    {user && (
                         <div onClick={handleLogout}> 
                             <li 
                             // onClick={handleLogout}
                             >Log out</li>
                         </div> 
-                    {/* )}  */}
+                    )}
                 </ul>
             )}
         </div>
