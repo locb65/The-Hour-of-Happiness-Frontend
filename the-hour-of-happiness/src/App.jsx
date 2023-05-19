@@ -15,11 +15,13 @@ axios.defaults.baseURL = 'http://localhost:4000';
 
 export const App = () => {
   const [user, setUser] = useState(false);
+  const [sessionUser, setSessionUser] = useState(null)
   const navigate = useNavigate();
   
-  const handleLogin = () => {
-    // Perform login logic
-    setUser(true); // Set the user state to true after successful login
+  const handleLogin = (sessionUser) => {
+        setUser(true);
+        setSessionUser(sessionUser);
+        console.log(sessionUser);
   };
 
   const handleLogout = () => {
@@ -38,8 +40,8 @@ export const App = () => {
     <div>
     {isHeaderVisible && <Header user={user} handleLogout = {handleLogout} />}
     <Routes>
-      <Route path='/' element={<WelcomePage/>} />
-      <Route path="/home" element={<HomeView />} />
+      <Route path='/' element={<WelcomePage />} />
+      <Route path="/home" element={<HomeView sessionUser ={sessionUser}/>} />
       <Route
         path="/login"
         element={
@@ -52,7 +54,7 @@ export const App = () => {
       />
       <Route path="/login-choice" element={<LoginChoice />} />
       <Route path="/access-denied" element={<AccessDenied />} />
-      <Route path="/profile" element={user ? <ProfilePage /> : <Navigate to='/home'/>} />
+      <Route path="/profile" element={user ? <ProfilePage  sessionUser ={sessionUser}/> : <Navigate to='/home'/>} />
       <Route path="/create-account" element={<CreateAccountPage/>} />
     </Routes>
     </div>

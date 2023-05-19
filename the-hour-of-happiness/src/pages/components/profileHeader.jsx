@@ -1,11 +1,11 @@
 import React from 'react';
 
-export const ProfileHeader = () => {
+export const ProfileHeader = ({ sessionUser }) => {
     return (
         <div className="profile-header">
             <div className="profile-img-container">
                 <img src="" alt=""/>
-                <h1>Name Here</h1>
+                <h1>{sessionUser?.name}</h1>
             </div>
         </div>
     )

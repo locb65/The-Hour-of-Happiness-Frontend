@@ -17,11 +17,14 @@ export const Login = ({ user, handleLogin }) => {
             const res = await axios.post('/login', {email, password});
             if (res.status === 200) {
                 console.log(res.data)
-                handleLogin();
-                navigate('/home')
-            }
+                const sessionUser = res.data.user;
+                console.log(sessionUser)
+                handleLogin(sessionUser);
+                navigate('/profile', {state: {sessionUser}})
+            } 
         } catch (err) {
             console.log(err);
+            alert("Incorrect Email or Password")
         }
     }
 
