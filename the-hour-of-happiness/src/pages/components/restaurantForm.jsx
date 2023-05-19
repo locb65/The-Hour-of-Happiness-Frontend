@@ -29,22 +29,22 @@ export const RestaurantForm = () => {
         e.preventDefault();
         try {
             const payload = {
-            name: formData.name,
-            address: {
-                street: formData.street,
-                city: formData.city,
-                state: formData.state,
-                zipCode: formData.zipCode
-            },
-            phone: formData.phone,
-            happyHour: {
-                day: formData.day,
-                time: formData.time,
-                deals: formData.deals
-            },
-            menu: formData.menu,
-            restaurantImg: formData.restaurantImg
-          };
+                name: formData.name,
+                address: {
+                    street: formData.street,
+                    city: formData.city,
+                    state: formData.state,
+                    zipCode: formData.zipCode
+                },
+                phone: formData.phone,
+                happyHour: {
+                    day: formData.day,
+                    time: formData.time,
+                    deals: formData.deals
+                },
+                menu: formData.menu,
+                restaurantImg: formData.restaurantImg
+            };
           const res = await axios.post(API_URL, payload);
           console.log(res.data);
           // Reset the form after successful submission
