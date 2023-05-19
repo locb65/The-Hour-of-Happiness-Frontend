@@ -16,9 +16,9 @@ export const ProfilePage = ({ sessionUser }) =>{
             </div>
             <div className="profile-body-container">
                 <div className="add-restaurant-btn-container">
-                    <button type="button" className="add-restaurant-btn" onClick={toggleForm}>Add Restaurant</button>
+                    <button type="button" className="add-restaurant-btn" onClick={toggleForm}>{isFormOpen ? "Hide Form" : "Add Restaurant"}</button>
                 </div> 
-                <RestaurantForm/>
+                {isFormOpen && <RestaurantForm toggleForm={toggleForm}/>}
             </div>
         </div>
     )

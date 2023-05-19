@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import axios from 'axios'
 import './restaurantForm.css'
 
-export const RestaurantForm = () => {
+export const RestaurantForm = ({toggleForm}) => {
     const API_URL = 'http://localhost:4000/happy-hour-time/new-happy-hour-location';
     const [formData, setFormData] = useState({
         name: '',
@@ -61,131 +61,141 @@ export const RestaurantForm = () => {
             menu: '',
             restaurantImg: '',
           });
+          toggleForm();
         } catch (err) {
           console.log(err);
         }
       };
+
+      const handleModalOverlayClick = (e) => {
+        if (e.target.classList.contains('modal-overlay')) {
+            toggleForm();
+        }
+      };
     return (
         <div>
-            
-            <form className="form-container" onSubmit={handleSubmit}>
-            <h1>Create a Restaurant</h1>
-                {/* Restaurant Name */}
-                <div className="form-field">
-                    <label htmlFor="name">Name:</label>
-                    <input
-                        type="text"
-                        name="name"
-                        value={formData.name}
-                        onChange={handleChange}
-                        required
-                    />
+            <div className = "modal-overlay" onClick={handleModalOverlayClick}>
+                <div className='modal-container'>
+                    <form className="form-container" onSubmit={handleSubmit}>
+                    <h1>Create a Restaurant</h1>
+                        {/* Restaurant Name */}
+                        <div className="form-field">
+                            <label htmlFor="name">Name:</label>
+                            <input
+                                type="text"
+                                name="name"
+                                value={formData.name}
+                                onChange={handleChange}
+                                required
+                            />
+                        </div>
+                        <div className="form-field">
+                            <label htmlFor="street">Street:</label>
+                            <input
+                                type="text"
+                                name="street"
+                                value={formData.street}
+                                onChange={handleChange}
+                                required
+                            />
+                        </div>
+                        <div className="form-field">
+                            <label htmlFor="city">City:</label>
+                            <input
+                                type="text"
+                                name="city"
+                                value={formData.city}
+                                onChange={handleChange}
+                                required
+                            />
+                        </div>
+                        <div className="form-field">
+                            <label htmlFor="state">State:</label>
+                            <input
+                                type="text"
+                                name="state"
+                                value={formData.state}
+                                onChange={handleChange}
+                                required
+                            />
+                        </div>
+                        <div className="form-field">
+                            <label htmlFor="zipCode">Zip Code:</label>
+                            <input
+                                type="text"
+                                name="zipCode"
+                                value={formData.zipCode}
+                                onChange={handleChange}
+                                required
+                            />
+                        </div>
+                        {/* Phone */}
+                        <div className="form-field">
+                            <label htmlFor="phone">Phone:</label>
+                            <input
+                                type="text"
+                                name="phone"
+                                value={formData.phone}
+                                onChange={handleChange}
+                                required
+                            />
+                        </div>
+                        {/* Happy Hour */}
+                        <div className="form-field">
+                            <label htmlFor="day">Happy Hour Day:</label>
+                            <input
+                                type="text"
+                                name="day"
+                                value={formData.day}
+                                onChange={handleChange}
+                                required
+                            />
+                        </div>
+                        <div className="form-field">
+                            <label htmlFor="time">Happy Hour Time:</label>
+                            <input
+                                type="text"
+                                name="time"
+                                value={formData.time}
+                                onChange={handleChange}
+                                required
+                            />
+                        </div>
+                        <div className="form-field">
+                            <label htmlFor="deals">Happy Hour Deals:</label>
+                            <input
+                                type="text"
+                                name="deals"
+                                value={formData.deals}
+                                onChange={handleChange}
+                            />
+                        </div>
+                        {/* Menu */}
+                        <div className="form-field">
+                            <label htmlFor="menu">Menu:</label>
+                            <input
+                                type="text"
+                                name="menu"
+                                value={formData.menu}
+                                onChange={handleChange}
+                                required
+                            />
+                        </div>
+                        {/* Restaurant Image */}
+                        <div className="form-field">
+                            <label htmlFor="restaurantImg">Restaurant Image:</label>
+                            <input
+                                type="text"
+                                name="restaurantImg"
+                                value={formData.restaurantImg}
+                                onChange={handleChange}
+                                required
+                            />
+                        </div>
+                        <button type="submit">Create Restaurant</button>
+                    </form>
                 </div>
-                <div className="form-field">
-                    <label htmlFor="street">Street:</label>
-                    <input
-                        type="text"
-                        name="street"
-                        value={formData.street}
-                        onChange={handleChange}
-                        required
-                    />
-                </div>
-                <div className="form-field">
-                    <label htmlFor="city">City:</label>
-                    <input
-                        type="text"
-                        name="city"
-                        value={formData.city}
-                        onChange={handleChange}
-                        required
-                    />
-                </div>
-                <div className="form-field">
-                    <label htmlFor="state">State:</label>
-                    <input
-                        type="text"
-                        name="state"
-                        value={formData.state}
-                        onChange={handleChange}
-                        required
-                    />
-                </div>
-                <div className="form-field">
-                    <label htmlFor="zipCode">Zip Code:</label>
-                    <input
-                        type="text"
-                        name="zipCode"
-                        value={formData.zipCode}
-                        onChange={handleChange}
-                        required
-                    />
-                </div>
-                {/* Phone */}
-                <div className="form-field">
-                    <label htmlFor="phone">Phone:</label>
-                    <input
-                        type="text"
-                        name="phone"
-                        value={formData.phone}
-                        onChange={handleChange}
-                        required
-                    />
-                </div>
-                {/* Happy Hour */}
-                <div className="form-field">
-                    <label htmlFor="day">Happy Hour Day:</label>
-                    <input
-                        type="text"
-                        name="day"
-                        value={formData.day}
-                        onChange={handleChange}
-                        required
-                    />
-                </div>
-                <div className="form-field">
-                    <label htmlFor="time">Happy Hour Time:</label>
-                    <input
-                        type="text"
-                        name="time"
-                        value={formData.time}
-                        onChange={handleChange}
-                        required
-                    />
-                </div>
-                <div className="form-field">
-                    <label htmlFor="deals">Happy Hour Deals:</label>
-                    <input
-                        type="text"
-                        name="deals"
-                        value={formData.deals}
-                        onChange={handleChange}
-                    />
-                </div>
-                {/* Menu */}
-                <div className="form-field">
-                    <label htmlFor="menu">Menu:</label>
-                    <input
-                        type="text"
-                        name="menu"
-                        value={formData.menu}
-                        onChange={handleChange}
-                        required
-                    />
-                </div>
-                {/* Restaurant Image */}
-                <div className="form-field">
-                    <label htmlFor="restaurantImg">Restaurant Image:</label>
-                    <input
-                        type="text"
-                        name="restaurantImg"
-                        value={formData.restaurantImg}
-                        onChange={handleChange}
-                        required
-                    />
-                </div>
-                <button type="submit">Create Restaurant</button>
-            </form>
+            </div>
         </div>
     )    
 } 
