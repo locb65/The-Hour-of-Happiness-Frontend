@@ -2,42 +2,42 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-  }
-  
-  .restaurant-container {
+}
+
+.restaurant-container {
     display: flex;
     align-items: center;
     margin: 1.25rem;
-  }
-  
-  .restaurant-img-container {
+}
+
+.restaurant-img-container {
     width: 17.5rem;
     height: 17.5rem;
     margin-right: 1.5rem;
     overflow: hidden;
-  }
-  
-  .restaurant-img-container img {
+}
+
+.restaurant-img-container img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-  }
-  
-  .restaurant-info-container {
+}
+
+.restaurant-info-container {
     display: flex;
     flex-direction: column;
     flex: 1
-  }
-  
-  .menu-link {
+}
+
+.menu-link {
     color: blue;
     text-decoration: none;
-  }
-  
-  .menu-link:hover {
-    text-decoration: underline;
-  }
+}
 
-  .happyHour-details {
+.menu-link:hover {
+    text-decoration: underline;
+}
+
+.happyHour-details {
     margin: 0.5rem 
-  }
+}

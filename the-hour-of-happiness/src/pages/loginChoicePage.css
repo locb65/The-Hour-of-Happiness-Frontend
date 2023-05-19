@@ -8,19 +8,19 @@
 
 .login-choice-left,
 .login-choice-right {
-width: 50%;
-height: 100%;
-display: flex;
-justify-content: center;
-align-items: center;
-flex-direction: column;
-background-repeat: no-repeat;
-background-size: cover;
-background-position: center center;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
 }
 
 .login-choice-left {
-background-image: url('https://i2-prod.mirror.co.uk/incoming/article28800330.ece/ALTERNATES/s1200b/0_people-talking-and-toasting-in-a-pub-with-the-beers.jpg');
+    background-image: url('https://i2-prod.mirror.co.uk/incoming/article28800330.ece/ALTERNATES/s1200b/0_people-talking-and-toasting-in-a-pub-with-the-beers.jpg');
 
 }
 

@@ -1,8 +1,8 @@
 .login-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    background-image: url('https://iso.500px.com/wp-content/uploads/2014/07/hong-kong-cityscape1.jpg');
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-image: url('https://iso.500px.com/wp-content/uploads/2014/07/hong-kong-cityscape1.jpg');
+}
