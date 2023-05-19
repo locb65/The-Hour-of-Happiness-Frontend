@@ -67,8 +67,9 @@ export const RestaurantForm = () => {
       };
     return (
         <div>
-            <h1>Create a Restaurant</h1>
+            
             <form className="form-container" onSubmit={handleSubmit}>
+            <h1>Create a Restaurant</h1>
                 {/* Restaurant Name */}
                 <div className="form-field">
                     <label htmlFor="name">Name:</label>
