@@ -65,13 +65,13 @@ export const RestaurantForm = ({toggleForm}) => {
         } catch (err) {
           console.log(err);
         }
-      };
+    };
 
-      const handleModalOverlayClick = (e) => {
+    const handleModalOverlayClick = (e) => {
         if (e.target.classList.contains('modal-overlay')) {
             toggleForm();
         }
-      };
+    };
     return (
         <div>
             <div className = "modal-overlay" onClick={handleModalOverlayClick}>
