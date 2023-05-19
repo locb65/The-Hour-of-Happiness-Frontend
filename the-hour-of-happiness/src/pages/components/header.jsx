@@ -3,10 +3,13 @@ import './header.css'
 import { SearchBar } from "./searchBar";
 import { DropDownMenu } from "./dropDownMenu";
 
-export const Header = ({user, handleLogout}) => {
+export const Header = ({user, handleLogout, navigate}) => {
+    const handleNavigateHome = () => {
+        navigate('/home');
+    }
     return (
-        <div className="header-container">
-            <h1 className="header-title">Clink City</h1>
+        <div className="header-container" >
+            <h1 className="header-title"onClick={handleNavigateHome}>Clink City</h1>
             <div className="search-bar-container">
                 <SearchBar/>
                 <div className="header-dropdown-container">

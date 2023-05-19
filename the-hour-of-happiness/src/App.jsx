@@ -38,7 +38,7 @@ export const App = () => {
 
   return (
     <div>
-    {isHeaderVisible && <Header user={user} handleLogout = {handleLogout} />}
+    {isHeaderVisible && <Header user={user} handleLogout = {handleLogout} navigate = {navigate}/>}
     <Routes>
       <Route path='/' element={<WelcomePage />} />
       <Route path="/home" element={<HomeView sessionUser ={sessionUser}/>} />
