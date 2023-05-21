@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import axios from 'axios'
 import './restaurantForm.css'
 
-export const RestaurantForm = ({toggleForm}) => {
+export const RestaurantForm = ({toggleForm, sessionUser}) => {
     const API_URL = 'http://localhost:4000/happy-hour-time/new-happy-hour-location';
     const [formData, setFormData] = useState({
         name: '',
@@ -25,6 +25,7 @@ export const RestaurantForm = ({toggleForm}) => {
         });
     };
 
+    
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
@@ -43,12 +44,22 @@ export const RestaurantForm = ({toggleForm}) => {
                     deals: formData.deals
                 },
                 menu: formData.menu,
-                restaurantImg: formData.restaurantImg
+                restaurantImg: formData.restaurantImg,
+                // setting ownerID to the new restaurant created
+                owner: sessionUser._id,
             };
-          const res = await axios.post(API_URL, payload);
-          console.log(res.data);
-          // Reset the form after successful submission
-          setFormData({
+        const res = await axios.post(API_URL, payload);
+        console.log(res.data);
+
+        // setting the new restaurant object ID to the owner Schema restaurant field
+        
+        const newRestaurantId = res.data._id
+        const ownerId = sessionUser._id
+        const UpdateOwnerUrl = `http://localhost:4000/accounts/update-owner/${ownerId}`
+        await axios.put (UpdateOwnerUrl, { $push: {restaurants: newRestaurantId }})
+
+        // Reset the form after successful submission
+        setFormData({
             name: '',
             street: '',
             city: '',
@@ -60,10 +71,10 @@ export const RestaurantForm = ({toggleForm}) => {
             deals: '',
             menu: '',
             restaurantImg: '',
-          });
-          toggleForm();
+        });
+        toggleForm()
         } catch (err) {
-          console.log(err);
+            console.log(err);
         }
     };
 
@@ -72,6 +83,7 @@ export const RestaurantForm = ({toggleForm}) => {
             toggleForm();
         }
     };
+    
     return (
         <div>
             <div className = "modal-overlay" onClick={handleModalOverlayClick}>
