@@ -2,8 +2,13 @@ import React, { useState } from 'react'
 import axios from 'axios'
 import './restaurantForm.css'
 
+
+
+
 export const RestaurantForm = ({toggleForm, sessionUser}) => {
     const API_URL = 'http://localhost:4000/happy-hour-time/new-happy-hour-location';
+    const cloudUrl = process.env.CLOUDINARY_API_URL 
+    const preset = process.env.CLOUDINARY_UPLOAD_PRESET
     const [formData, setFormData] = useState({
         name: '',
         street: '',
@@ -25,10 +30,30 @@ export const RestaurantForm = ({toggleForm, sessionUser}) => {
         });
     };
 
-    
+    const HandleImageUpload = async (file) => {
+        try {
+            const formData = new FormData();
+            formData.append('file', file);
+            formData.append('upload_preset', "ml_default");
+            console.log(file)
+            console.log(formData);
+
+            const res = await axios.post('http://api.cloudinary.com/v1_1/dk5rjoauw/upload', formData);
+            console.log(res.data.secure_url)
+            console.log(res.data)
+            return res.data.secure_url;
+        } catch(err) {
+            console.log(err);
+            return null;
+        }
+    };
+
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
+            const fileInput = e.target.restaurantImg
+            const file = fileInput.files[0];
+            const imgUrl = await HandleImageUpload(file)
             const payload = {
                 name: formData.name,
                 address: {
@@ -44,7 +69,7 @@ export const RestaurantForm = ({toggleForm, sessionUser}) => {
                     deals: formData.deals
                 },
                 menu: formData.menu,
-                restaurantImg: formData.restaurantImg,
+                restaurantImg: imgUrl,
                 // setting ownerID to the new restaurant created
                 owner: sessionUser._id,
             };
@@ -197,7 +222,8 @@ export const RestaurantForm = ({toggleForm, sessionUser}) => {
                         <div className="form-field">
                             <label htmlFor="restaurantImg">Restaurant Image:</label>
                             <input
-                                type="text"
+                                className='img-form-input'
+                                type="file"
                                 name="restaurantImg"
                                 value={formData.restaurantImg}
                                 onChange={handleChange}
