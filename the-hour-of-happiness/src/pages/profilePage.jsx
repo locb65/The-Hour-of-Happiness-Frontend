@@ -22,7 +22,7 @@ export const ProfilePage = ({ sessionUser }) =>{
                 {isFormOpen && <RestaurantForm toggleForm={toggleForm} sessionUser = {sessionUser}/>}
             </div>
             <div className="profile-restaurant-container">
-                <ProfileRestaurantView/>
+                <ProfileRestaurantView sessionUser = {sessionUser}/>
             </div>
         </div>
     )

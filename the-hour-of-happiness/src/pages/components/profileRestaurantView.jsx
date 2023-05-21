@@ -1,12 +1,13 @@
 import React, {useState, useEffect } from 'react';
 import axios from 'axios';
 
-export const ProfileRestaurantView = () => {
+export const ProfileRestaurantView = ({sessionUser}) => {
     const [restaurants,setRestaurants] = useState([])
 
     useEffect(() => {
         const getRestaurants = async () => {
             try {
+                console.log(sessionUser)
                 const endpoint_URL = 'http://localhost:4000/accounts/restaurant-owners/owned-restaurants'
                 const res = await axios.get(endpoint_URL);
                 console.log(res.data);
