@@ -5,4 +5,7 @@
     justify-content: center;
     height: 100vh;
     background-image: url('https://iso.500px.com/wp-content/uploads/2014/07/hong-kong-cityscape1.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
 }

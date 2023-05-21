@@ -1,13 +1,14 @@
 import React, {useState} from 'react';
 import axios from 'axios';
+import './profileHeader.css'
 
 export const ProfileHeader = ({ sessionUser }) => {
     return (
         <div className="profile-header">
             <div className="profile-img-container">
                 <img src="" alt=""/>
-                <h1>{sessionUser?.name}</h1>
             </div>
+            <h1>{sessionUser?.name}</h1>
         </div>
     )
 }
