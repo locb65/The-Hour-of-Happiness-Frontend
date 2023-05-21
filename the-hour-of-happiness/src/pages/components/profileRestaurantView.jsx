@@ -25,12 +25,18 @@ export const ProfileRestaurantView = ({sessionUser}) => {
         <h2>
             My Restaurants
         </h2>
-        <ul>
+        <ul className='profile-restaurant-list-view'>
             {restaurants.map((restaurant) => (
                 <li key={restaurant._id}>
-                    <h1>{restaurant.name}</h1>
-                    <img src = {restaurant.restaurantImg}></img>
-                    </li>
+                    <img  className='profile-restaurant-img'src = {restaurant.restaurantImg}></img>
+                    <div className='info-container'>
+                    <h2>{restaurant.name}</h2>
+                    <p>Address: {restaurant.address.street}, {restaurant.address.city}, {restaurant.address.state}, {restaurant.address.zipCode}</p>
+                    <p>Phone: {restaurant.phone}</p>
+                    <p>Menu: {restaurant.menu}</p>
+                    <p>Happy Hour: {restaurant.happyHour.day}, {restaurant.happyHour.time}, {restaurant.happyHour.deals}</p>
+                    </div>
+                </li>
             ))}
         </ul>
        </div>
