@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import { ProfileHeader } from "./components/profileHeader";
 import { RestaurantForm } from "./components/restaurantForm";
+import { ProfileRestaurantView } from "./components/profileRestaurantView";
 
 export const ProfilePage = ({ sessionUser }) =>{
     const [isFormOpen, setIsFormOpen] = useState(false)
@@ -19,6 +20,9 @@ export const ProfilePage = ({ sessionUser }) =>{
                     <button type="button" className="add-restaurant-btn" onClick={toggleForm}>{isFormOpen ? "Hide Form" : "Add Restaurant"}</button>
                 </div> 
                 {isFormOpen && <RestaurantForm toggleForm={toggleForm} sessionUser = {sessionUser}/>}
+            </div>
+            <div className="profile-restaurant-container">
+                <ProfileRestaurantView/>
             </div>
         </div>
     )
