@@ -8,7 +8,8 @@ export const ProfileRestaurantView = ({sessionUser}) => {
         const getRestaurants = async () => {
             try {
                 console.log(sessionUser)
-                const endpoint_URL = 'http://localhost:4000/accounts/restaurant-owners/owned-restaurants'
+                const id = sessionUser._id
+                const endpoint_URL = `http://localhost:4000/accounts/restaurant-owners/${id}/owned-restaurants`
                 const res = await axios.get(endpoint_URL);
                 console.log(res.data);
                 setRestaurants(res.data);
