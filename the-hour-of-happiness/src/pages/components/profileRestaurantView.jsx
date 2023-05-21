@@ -1,5 +1,7 @@
 import React, {useState, useEffect } from 'react';
 import axios from 'axios';
+import './profileRestaurantView.css';
+
 
 export const ProfileRestaurantView = ({sessionUser}) => {
     const [restaurants,setRestaurants] = useState([])
