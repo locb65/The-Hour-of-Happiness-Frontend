@@ -2,6 +2,8 @@ import React, {useState} from "react";
 import { ProfileHeader } from "./components/profileHeader";
 import { RestaurantForm } from "./components/restaurantForm";
 import { ProfileRestaurantView } from "./components/profileRestaurantView";
+import './profilePage.css'
+
 
 export const ProfilePage = ({ sessionUser }) =>{
     const [isFormOpen, setIsFormOpen] = useState(false)

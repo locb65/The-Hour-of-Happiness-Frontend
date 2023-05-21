@@ -24,9 +24,11 @@ export const ProfileRestaurantView = ({sessionUser}) => {
 
     return (
        <div>
-        <h2>
+        <div>
+        <h2 className='profile-restaurant-view-header'>
             My Restaurants
         </h2>
+        </div>
         <ul className='profile-restaurant-list-view'>
             {restaurants.map((restaurant) => (
                 <li key={restaurant._id}>

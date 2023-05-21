@@ -3,7 +3,7 @@
     display: flex;
     justify-content: space-between;
     height: 9.5em;
-    color: rgb(218, 169, 80);
+    color: rgb(163, 242, 248);
     background-size: auto;
     background-position: initial;
 
@@ -17,8 +17,8 @@
     margin: 0;
     padding: 0.1em;
     cursor: grab;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
-    font-size: 4em;
+    text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.8);
+    font-size: 4.5em;
 }
 /* h1 {
     font-size: 4em;
