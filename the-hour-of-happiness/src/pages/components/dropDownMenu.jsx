@@ -65,9 +65,9 @@ export const DropDownMenu = ({user, handleLogout}) => {
                             >Sign In</li>
                         </div></Link>
                     )}
-                    <Link to='/profile'><div><li>Profile</li></div></Link>
-                    <Link><div><li>Map</li></div></Link>
-                    <Link><div><li>Account</li></div></Link>
+                    <Link to='/profile'><div onClick={toggleMenu}><li>Profile</li></div></Link>
+                    <Link><div onClick={toggleMenu}><li>Map</li></div></Link>
+                    <Link><div onClick={toggleMenu}><li>Account</li></div></Link>
                     {user && (
                        <Link> <div onClick={handleLogoutButton}> 
                             <li 
