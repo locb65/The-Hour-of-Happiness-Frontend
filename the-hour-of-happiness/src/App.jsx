@@ -54,7 +54,7 @@ export const App = () => {
       />
       <Route path="/login-choice" element={<LoginChoice />} />
       <Route path="/access-denied" element={<AccessDenied />} />
-      <Route path="/profile" element={user ? <ProfilePage  sessionUser ={sessionUser}/> : <Navigate to='/home'/>} />
+      <Route path="/profile" element={user ? <ProfilePage  navigate = {navigate} sessionUser ={sessionUser}/> : <Navigate to='/home'/>} />
       <Route path="/create-account" element={<CreateAccountPage/>} />
     </Routes>
     </div>

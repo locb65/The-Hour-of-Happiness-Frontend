@@ -5,7 +5,7 @@ import { ProfileRestaurantView } from "./components/profileRestaurantView";
 import './profilePage.css'
 
 
-export const ProfilePage = ({ sessionUser }) =>{
+export const ProfilePage = ({ sessionUser, navigate }) =>{
     const [isFormOpen, setIsFormOpen] = useState(false)
 
     const toggleForm = () =>{
@@ -24,7 +24,7 @@ export const ProfilePage = ({ sessionUser }) =>{
                 {isFormOpen && <RestaurantForm toggleForm={toggleForm} sessionUser = {sessionUser}/>}
             </div>
             <div className="profile-restaurant-container">
-                <ProfileRestaurantView sessionUser = {sessionUser}/>
+                <ProfileRestaurantView sessionUser = {sessionUser} navigate = {navigate}/>
             </div>
         </div>
     )

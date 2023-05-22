@@ -4,7 +4,7 @@ import './profileRestaurantView.css';
 import { EditForm } from './editRestaurantForm';
 
 
-export const ProfileRestaurantView = ({sessionUser}) => {
+export const ProfileRestaurantView = ({sessionUser, navigate}) => {
     const [restaurants,setRestaurants] = useState([])
     const [editingRestaurantId, setEditingRestaurantId] = useState(null);
     const [editedRestaurant, setEditedRestaurant] = useState({});
@@ -66,6 +66,7 @@ export const ProfileRestaurantView = ({sessionUser}) => {
                             restaurant={restaurant}
                             onSave={handleSave}
                             onCancel={handleCancel}
+                            navigate={navigate}
                         />
                         ) : (
                         <button className="edit-button" onClick={() => handleEdit(restaurant._id)}>

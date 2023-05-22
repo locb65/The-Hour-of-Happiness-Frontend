@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import './editRestaurantForm.css';
 
-export const EditForm = ({ restaurant, onSave, onCancel }) => {
+
+export const EditForm = ({ restaurant, onSave, onCancel, navigate}) => {
     const [editedRestaurant, setEditedRestaurant] = useState(restaurant);
 
     const handleInputChange = (e) => {
@@ -31,6 +32,7 @@ export const EditForm = ({ restaurant, onSave, onCancel }) => {
         const res = await axios.put(endpoint_URL, editedRestaurant);
         console.log('Update successful:', res.data);
         onSave(editedRestaurant);
+        navigate('/profile')
         } catch (err) {
         console.log('Update failed:', err);
         }
