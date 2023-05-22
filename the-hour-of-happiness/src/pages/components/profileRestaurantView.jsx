@@ -1,10 +1,13 @@
 import React, {useState, useEffect } from 'react';
 import axios from 'axios';
 import './profileRestaurantView.css';
+import { EditForm } from './editRestaurantForm';
 
 
 export const ProfileRestaurantView = ({sessionUser}) => {
     const [restaurants,setRestaurants] = useState([])
+    const [editingRestaurantId, setEditingRestaurantId] = useState(null);
+    const [editedRestaurant, setEditedRestaurant] = useState({});
 
     useEffect(() => {
         const getRestaurants = async () => {
@@ -20,8 +23,26 @@ export const ProfileRestaurantView = ({sessionUser}) => {
             }
         };
         getRestaurants();
-    }, []);
+    }, []); 
 
+    const handleEdit = (restaurantId) => {
+        setEditingRestaurantId(restaurantId);
+    };
+    
+    const handleSave = async (editedRestaurant) => {
+        try {
+        // Perform save logic here using the editedRestaurant object
+        console.log('Save restaurant:', editedRestaurant);
+        // Reset the editingRestaurantId after saving
+        setEditingRestaurantId(null);
+        } catch (err) {
+        console.log('Save failed:', err);
+        }
+    };
+    
+    const handleCancel = () => {
+        setEditingRestaurantId(null);
+    };
     return (
        <div>
         <div>
@@ -40,6 +61,17 @@ export const ProfileRestaurantView = ({sessionUser}) => {
                     <p>Menu: {restaurant.menu}</p>
                     <p>Happy Hour: {restaurant.happyHour.day}, {restaurant.happyHour.time}, {restaurant.happyHour.deals}</p>
                     </div>
+                    {editingRestaurantId === restaurant._id ? (
+                        <EditForm
+                            restaurant={restaurant}
+                            onSave={handleSave}
+                            onCancel={handleCancel}
+                        />
+                        ) : (
+                        <button className="edit-button" onClick={() => handleEdit(restaurant._id)}>
+                        Edit
+                        </button>
+                    )}
                 </li>
             ))}
         </ul>

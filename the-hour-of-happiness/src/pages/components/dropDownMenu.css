@@ -31,6 +31,7 @@
     width: 8em;
     display: block;
     padding: 8px 16px;
+    text-decoration: underline;
 }
 
 .dropdown-menu li:hover {
