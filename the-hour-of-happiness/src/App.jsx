@@ -16,14 +16,18 @@ axios.defaults.baseURL = 'http://localhost:4000';
 export const App = () => {
   const [user, setUser] = useState(false);
   const [sessionUser, setSessionUser] = useState(null)
+  const [searchResults, setSearchResults] = useState([]);
+  
   const navigate = useNavigate();
   
   const handleLogin = (sessionUser) => {
-        setUser(true);
-        setSessionUser(sessionUser);
-        console.log(sessionUser);
+    setUser(true);
+    setSessionUser(sessionUser);
+    console.log(sessionUser);
   };
-
+  const handleSearch = (results) => {
+    setSearchResults(results);
+  };
   const handleLogout = () => {
     // Perform logout logic
     setUser(false); // Set the user state to false after logout
@@ -38,10 +42,10 @@ export const App = () => {
 
   return (
     <div>
-    {isHeaderVisible && <Header user={user} handleLogout = {handleLogout} navigate = {navigate}/>}
+    {isHeaderVisible && <Header user={user} handleSearch={handleSearch} handleLogout = {handleLogout} navigate = {navigate}/>}
     <Routes>
       <Route path='/' element={<WelcomePage />} />
-      <Route path="/home" element={<HomeView sessionUser ={sessionUser}/>} />
+      <Route path="/home" element={<HomeView sessionUser ={sessionUser} searchResults={searchResults}/>} />
       <Route
         path="/login"
         element={

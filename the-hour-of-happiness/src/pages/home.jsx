@@ -1,12 +1,10 @@
-import React from "react";
-import { SearchBar } from "./components/searchBar";
-import { Header } from "./components/header";
+import React, {useState}from "react";
 import { HappyHourList } from "./components/happyHourListView";
 
-export const HomeView = () => {
+export const HomeView = ({searchResults}) => {
     return (
             <div>
-                <HappyHourList/>
+                <HappyHourList searchResults={searchResults}/>
             </div>
     );
 };

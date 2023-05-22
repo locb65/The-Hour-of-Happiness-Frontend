@@ -5,7 +5,6 @@ import axios from 'axios'
 
 export const DropDownMenu = ({user, handleLogout}) => {
     const [isOpen, setIsOpen] = useState(false);
-    const [isAuthenticated, setIsAuthenticated] = useState(false);
     const navigate = useNavigate();
 
 

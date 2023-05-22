@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import "./happyHourListView.css";
 
-export const HappyHourList = () => {
+export const HappyHourList = ({searchResults}) => {
   const [restaurants, setRestaurants] = useState([]);
 
   useEffect(() => {
@@ -19,11 +19,13 @@ export const HappyHourList = () => {
     fetchRestaurants();
   }, []);
 
+  const filteredRestaurants = searchResults.length > 0 ? searchResults : restaurants;
+
   return (
     <div className="restaurant-list-container">
       <h2>Happy Hour Locations</h2>
       <ul>
-        {restaurants.map((restaurant) => (
+        {filteredRestaurants.map((restaurant) => (
           <li className="restaurant-container" key={restaurant.name}>
             <div className="restaurant-img-container">
               <img src={restaurant.restaurantImg} alt={restaurant.name} />
