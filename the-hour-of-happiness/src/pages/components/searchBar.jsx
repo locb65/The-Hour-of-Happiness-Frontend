@@ -10,7 +10,7 @@ export const SearchBar = ({ handleSearch }) => {
     const performSearch = async (query) => {
         try {
             const encodedQuery = encodeURI(query);
-            const res = await axios.get(`/api/restaurants/search?name=${encodedQuery}`);
+            const res = await axios.get(`http://localhost:4000/happy-hour-time/search?name=${encodedQuery}`);
             handleSearch(res.data);
             console.log(res.data);
         } catch (error) {
