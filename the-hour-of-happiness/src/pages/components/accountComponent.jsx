@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import axios from "axios";
+import './accountComponent.css';
 
 export const AccountComponent = ({sessionUser, navigate, user, handleDeleteUser}) =>{
     const [emailInput, setEmailInput] = useState("");
@@ -94,32 +95,41 @@ export const AccountComponent = ({sessionUser, navigate, user, handleDeleteUser}
                 onChange={handleInputChange}
                 placeholder="Email"></input>
                 {/* <button className="edit-email-btn" onClick={handleEditClick}>Edit Email</button> */}
+                <div>
                 <button className="update-email-btn" onClick={handleUpdateClick}>Update Email</button>
+                </div>
             </div>
             <div className="account-update-section">
-                <h2>Password</h2>
+                <h2>Current Password</h2>
                 <p>{renderPasswordWithAsterisks(sessionUser.password)}</p>
-                <input 
-                className="password-input" 
-                type="password" 
-                name="password" 
-                placeholder="Enter your password"
-                value={passwordInput}
-                onChange={handleInputChange}
-                />
-                <input 
-                className="password-input" 
-                type="password"
-                name="confirmPassword" 
-                placeholder="Confirm your password" 
-                value={confirmPasswordInput}
-                onChange={handleInputChange}
-                />
+                <div>
+                    <h2>New Password</h2>
+                    <input 
+                    className="password-input" 
+                    type="password" 
+                    name="password" 
+                    placeholder="Enter your password"
+                    value={passwordInput}
+                    onChange={handleInputChange}
+                    />
+                </div>
+                <div>
+                    <h2>Confirm New Password</h2>
+                    <input 
+                    className="password-input" 
+                    type="password"
+                    name="confirmPassword" 
+                    placeholder="Confirm your password" 
+                    value={confirmPasswordInput}
+                    onChange={handleInputChange}
+                    />
+                </div>
                 {/* <button className="edit-password-btn" onClick={handleEditClick}>Edit Password</button> */}
-                <button className="update-password-btn" onClick={handleUpdateClick}>Update Password</button>
+                
             </div>
+            
             <div className="account-update-section">
-                <h2>Delete Account</h2>
+            <button className="update-password-btn" onClick={handleUpdateClick}>Update Password</button>
                 <button className ="delete-account-btn" onClick={handleDelete}>Delete Account</button>
             </div>
         </div>
