@@ -58,7 +58,7 @@ export const App = () => {
   // }, [user]
   );
 
-  const isHeaderVisible = ['/home', '/profile'].includes(window.location.pathname);
+  const isHeaderVisible = ['/home', '/profile', '/my-account'].includes(window.location.pathname);
 
   return (
     <div>
@@ -80,7 +80,7 @@ export const App = () => {
       <Route path="/access-denied" element={<AccessDenied />} />
       <Route path="/profile" element={user ? <ProfilePage  navigate = {navigate} sessionUser ={sessionUser}/> : <Navigate to='/home'/>} />
       <Route path="/create-account" element={<CreateAccountPage/>} />
-      <Route path="/my-account" element={<AccountPage sessionUser={sessionUser}/>} />
+      <Route path="/my-account" element={<AccountPage sessionUser={sessionUser} navigate = {navigate}/>} />
     </Routes>
     </div>
   )

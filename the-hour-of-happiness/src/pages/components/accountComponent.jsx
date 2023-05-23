@@ -1,25 +1,37 @@
-import React from "react";
+import React, {useState} from "react";
+import axios from "axios";
 
-export const AccountComponent = ({sessionUser}) =>{
+export const AccountComponent = ({sessionUser, navigate}) =>{
+    // const [emailInput, setEmailInput] = useState("");
+    // const [passwordInput, setPasswordInput] = useState("");
+    // const [confirmPasswordInput, setConfirmPasswordInput] = useState("");
+
     // replaces password with ****
     const renderPasswordWithAsterisks = (password) => {
         return password.replace(/./g, "*")
     }
 
-    handleInputChange = (e) =>{
-        // input Change logic here
-    }
+    // handleInputChange = (e) =>{
+    //     // input Change logic here
+    // }
 
-    handleEditClick = (e) => {
-        // logic for edit btn
-    }
+    // handleEditClick = (e) => {
+    //     // logic for edit btn
+    // }
 
-    handleUpdateClick = (e) => {
-        // logic for update btn here
-    }
+    // handleUpdateClick = (e) => {
+    //     // logic for update btn here
+    // }
 
     const handleDelete = async(e) =>{
         // delete account logic here
+        const delete_Enpoint = `http://localhost:4000/accounts/delete-owner/${sessionUser.id}`
+        try {
+            const res = await axios.delete(delete_Enpoint);
+            console.log(res.data)
+        } catch (err) {
+            console.log(err)
+        }
     }
 
     return(
@@ -42,7 +54,7 @@ export const AccountComponent = ({sessionUser}) =>{
             </div>
             <div className="account-update-section">
                 <h2>Delete Account</h2>
-                <button className ="delete-account-btn">Delete Account</button>
+                <button className ="delete-account-btn" onClick={handleDelete}>Delete Account</button>
             </div>
         </div>
     )
