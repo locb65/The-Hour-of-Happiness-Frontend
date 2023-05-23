@@ -80,7 +80,7 @@ export const App = () => {
       <Route path="/access-denied" element={<AccessDenied />} />
       <Route path="/profile" element={user ? <ProfilePage  navigate = {navigate} sessionUser ={sessionUser}/> : <Navigate to='/home'/>} />
       <Route path="/create-account" element={<CreateAccountPage/>} />
-      <Route path="/my-account" element={<AccountPage/>} />
+      <Route path="/my-account" element={<AccountPage sessionUser={sessionUser}/>} />
     </Routes>
     </div>
   )
