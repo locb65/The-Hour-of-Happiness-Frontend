@@ -125,11 +125,9 @@ export const AccountComponent = ({sessionUser, navigate, user, handleDeleteUser}
                     />
                 </div>
                 {/* <button className="edit-password-btn" onClick={handleEditClick}>Edit Password</button> */}
-                
             </div>
-            
             <div className="account-update-section">
-            <button className="update-password-btn" onClick={handleUpdateClick}>Update Password</button>
+                <button className="update-password-btn" onClick={handleUpdateClick}>Update Password</button>
                 <button className ="delete-account-btn" onClick={handleDelete}>Delete Account</button>
             </div>
         </div>
