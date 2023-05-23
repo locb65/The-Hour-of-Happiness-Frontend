@@ -14,7 +14,7 @@ export const Login = ({ user, handleLogin }) => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const res = await axios.post('/login', {email, password});
+            const res = await axios.post('/login', {email, password}, {withCredentials: true});
             if (res.status === 200) {
                 console.log(res.data)
                 const sessionUser = res.data.user;

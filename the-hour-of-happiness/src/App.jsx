@@ -45,6 +45,7 @@ export const App = () => {
       try {
         // request to endpoint
         const res = await axios.get('http://localhost:4000/check-authentication', { withCredentials: true });
+        console.log(res.data)
         const isAuthenticated = res.data.authenticated;
         // condition to set user state if user is authenticated
         if (isAuthenticated) {

@@ -41,6 +41,11 @@
   button:hover {
     background-color: #4d4d4d;
   }
+
+  .delete-account-btn, 
+  .update-account-btn {
+    margin: 0 5px;
+  }
   
   .delete-account-btn {
     background-color: #929292;
