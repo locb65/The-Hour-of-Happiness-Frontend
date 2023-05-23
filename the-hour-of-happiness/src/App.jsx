@@ -23,7 +23,7 @@ export const App = () => {
   const handleLogin = (sessionUser) => {
     setUser(true);
     setSessionUser(sessionUser);
-    console.log(sessionUser);
+    console.log('Logged in:', sessionUser);
   };
   const handleSearch = (results) => {
     setSearchResults(results);
@@ -33,10 +33,29 @@ export const App = () => {
     setUser(false); // Set the user state to false after logout
     alert('Logout Successful');
   }; 
-
+  // checks to see if user is authenticated to persist user through rerender. Not working yet
   useEffect(() => {
-    console.log(user);
-  }, [user]);
+    const checkAuthentication = async () => {
+      try {
+        // request to endpoint
+        const res = await axios.get('http://localhost:4000/check-authentication', { withCredentials: true });
+        const isAuthenticated = res.data.authenticated;
+        // condition to set user state if user is authenticated
+        if (isAuthenticated) {
+          setSessionUser(res.data.user);
+          setUser(true);
+        }
+        console.log('Is authenticated:', isAuthenticated);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+  
+    checkAuthentication();
+  }, []
+  //   console.log(user);
+  // }, [user]
+  );
 
   const isHeaderVisible = ['/home', '/profile'].includes(window.location.pathname);
 

@@ -18,7 +18,7 @@ export const Login = ({ user, handleLogin }) => {
             if (res.status === 200) {
                 console.log(res.data)
                 const sessionUser = res.data.user;
-                console.log(sessionUser)
+                console.log('Logged in:', sessionUser);
                 handleLogin(sessionUser);
                 navigate('/profile', {state: {sessionUser}})
             } 
