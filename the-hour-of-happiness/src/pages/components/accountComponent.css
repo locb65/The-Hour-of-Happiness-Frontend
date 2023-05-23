@@ -5,52 +5,52 @@
     justify-content: center;
     text-align: center;
     border-top: 2px solid #000000;
-  }
+}
   
-  .account-update-section {
+.account-update-section {
     margin: 20px 0;
-  }
+}
   
-  h1 {
+h1 {
     margin-bottom: 10px;
-  }
+}
   
-  h2 {
+h2 {
     margin-bottom: 5px;
-  }
+}
   
-  p {
+p {
     margin-bottom: 10px;
-  }
+}
   
-  input {
+input {
     margin-bottom: 10px;
     padding: 5px;
     width: 300px;
-  }
+}
   
-  button {
+button {
     padding: 10px 20px;
     background-color: #929292;
     color: #fff;
     border: none;
     border-radius: 4px;
     cursor: pointer;
-  }
+}
   
   button:hover {
     background-color: #4d4d4d;
-  }
+}
 
-  .delete-account-btn, 
-  .update-account-btn {
+.delete-account-btn, 
+.update-account-btn {
     margin: 0 5px;
-  }
+}
   
-  .delete-account-btn {
+.delete-account-btn {
     background-color: #929292;
-  }
+}
   
-  .delete-account-btn:hover {
+.delete-account-btn:hover {
     background-color: #4d4d4d;
-  }
+}

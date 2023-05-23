@@ -1,0 +1,18 @@
+.footer-container {
+    background-color: black;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.github-link {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-size: 24px;
+    margin-right: 10px;
+}
+
+.github-logo {
+    vertical-align: middle;
+}

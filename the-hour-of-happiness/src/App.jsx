@@ -11,6 +11,7 @@ import axios from 'axios';
 import { Header } from './pages/components/header';
 import { useNavigate, Navigate } from 'react-router-dom';
 import { AccountPage } from './pages/accountPage';
+import { Footer } from './pages/components/footer';
 
 axios.defaults.baseURL = 'http://localhost:4000';
 
@@ -65,10 +66,12 @@ export const App = () => {
   );
 
   const isHeaderVisible = ['/home', '/profile', '/my-account'].includes(window.location.pathname);
+  const isFooterVisible = ['/home', '/profile', '/my-account'].includes(window.location.pathname)
 
   return (
     <div>
     {isHeaderVisible && <Header user={user} handleSearch={handleSearch} handleLogout = {handleLogout} navigate = {navigate}/>}
+    
     <Routes>
       <Route path='/' element={<WelcomePage />} />
       <Route path="/home" element={<HomeView sessionUser ={sessionUser} searchResults={searchResults}/>} />
@@ -88,6 +91,7 @@ export const App = () => {
       <Route path="/create-account" element={<CreateAccountPage/>} />
       <Route path="/my-account" element={<AccountPage sessionUser={sessionUser} navigate = {navigate} user={user} handleDeleteUser= {handleDeleteUser}/>} />
     </Routes>
+    {isFooterVisible && <Footer />}
     </div>
   )
 }

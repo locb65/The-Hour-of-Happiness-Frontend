@@ -1,12 +1,14 @@
 import React from 'react';
-import './Footer.css';
+import './footer.css';
+import { FaGithub } from 'react-icons/fa';
 
-const Footer = () => {
+export const Footer = () => {
     return (
-        <footer className="footer">
-        
-        </footer>
+            <div className="footer-container">
+                <a href="https://github.com/locb65" target="_blank" rel="noopener noreferrer" className="github-link">
+                <FaGithub className="github-logo" />
+                Locb65
+                </a>
+            </div>
     );
 }
-
-export default Footer;
