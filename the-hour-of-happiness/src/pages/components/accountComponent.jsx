@@ -1,6 +1,27 @@
 import React from "react";
 
 export const AccountComponent = ({sessionUser}) =>{
+    // replaces password with ****
+    const renderPasswordWithAsterisks = (password) => {
+        return password.replace(/./g, "*")
+    }
+
+    handleInputChange = (e) =>{
+        // input Change logic here
+    }
+
+    handleEditClick = (e) => {
+        // logic for edit btn
+    }
+
+    handleUpdateClick = (e) => {
+        // logic for update btn here
+    }
+
+    const handleDelete = async(e) =>{
+        // delete account logic here
+    }
+
     return(
         <div className="account-component-container">
             <h1>Account Page</h1>
@@ -13,7 +34,7 @@ export const AccountComponent = ({sessionUser}) =>{
             </div>
             <div className="account-update-section">
                 <h2>Password</h2>
-                <p>{sessionUser.password}</p>
+                <p>{renderPasswordWithAsterisks(sessionUser.password)}</p>
                 <input className="password-input" type="password" placeholder="Enter your password" />
                 <input className="password-input" type="password" placeholder="Confirm your password" />
                 <button className="edit-password-btn">Edit Password</button>
