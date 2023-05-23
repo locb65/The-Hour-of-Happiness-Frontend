@@ -29,6 +29,11 @@ export const App = () => {
   const handleSearch = (results) => {
     setSearchResults(results);
   };
+
+  const handleDeleteUser = () => {
+    setUser(false)
+    alert(`${sessionUser.name} account deleted successfully!`)
+  }
   const handleLogout = () => {
     // Perform logout logic
     setUser(false); // Set the user state to false after logout
@@ -80,7 +85,7 @@ export const App = () => {
       <Route path="/access-denied" element={<AccessDenied />} />
       <Route path="/profile" element={user ? <ProfilePage  navigate = {navigate} sessionUser ={sessionUser}/> : <Navigate to='/home'/>} />
       <Route path="/create-account" element={<CreateAccountPage/>} />
-      <Route path="/my-account" element={<AccountPage sessionUser={sessionUser} navigate = {navigate}/>} />
+      <Route path="/my-account" element={<AccountPage sessionUser={sessionUser} navigate = {navigate} user={user} handleDeleteUser= {handleDeleteUser}/>} />
     </Routes>
     </div>
   )
