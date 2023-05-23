@@ -10,6 +10,7 @@ import { CreateAccountPage } from './pages/createAccountPage';
 import axios from 'axios';
 import { Header } from './pages/components/header';
 import { useNavigate, Navigate } from 'react-router-dom';
+import { AccountPage } from './pages/accountPage';
 
 axios.defaults.baseURL = 'http://localhost:4000';
 
@@ -79,6 +80,7 @@ export const App = () => {
       <Route path="/access-denied" element={<AccessDenied />} />
       <Route path="/profile" element={user ? <ProfilePage  navigate = {navigate} sessionUser ={sessionUser}/> : <Navigate to='/home'/>} />
       <Route path="/create-account" element={<CreateAccountPage/>} />
+      <Route path="/my-account" element={<AccountPage/>} />
     </Routes>
     </div>
   )

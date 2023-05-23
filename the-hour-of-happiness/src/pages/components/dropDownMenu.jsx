@@ -49,6 +49,11 @@ export const DropDownMenu = ({user, handleLogout}) => {
         // console.log(isAuthenticated);
     }
 
+    const handleAccountClick = () => {
+        toggleMenu();
+        navigate('/my-account');
+    }
+
 
     return (
         <div className='dropdown-container'>
@@ -66,7 +71,7 @@ export const DropDownMenu = ({user, handleLogout}) => {
                     )}
                     <Link to='/profile'><div onClick={toggleMenu}><li>Profile</li></div></Link>
                     <Link><div onClick={toggleMenu}><li>Map</li></div></Link>
-                    <Link><div onClick={toggleMenu}><li>Account</li></div></Link>
+                    <div onClick={handleAccountClick}><li>Account</li></div>
                     {user && (
                         <div onClick={handleLogoutButton}> 
                             <li 
