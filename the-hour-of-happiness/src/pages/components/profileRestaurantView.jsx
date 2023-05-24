@@ -28,6 +28,17 @@ export const ProfileRestaurantView = ({sessionUser, navigate}) => {
     const handleEdit = (restaurantId) => {
         setEditingRestaurantId(restaurantId);
     };
+
+    const handleDelete = async (restaurantId) => {
+        try {
+            const endpoint_URL = `http://localhost:4000/happy-hour-time/delete-happy-hour-location/${restaurantId}`;
+            await axios.delete(endpoint_URL);
+            console.log('Restaurant deleted successfully');
+            getRestaurants();
+        } catch (err) {
+            console.log('Delete failed:', err);
+        }
+      };
     
     const handleSave = async (editedRestaurant) => {
         try {
@@ -70,9 +81,14 @@ export const ProfileRestaurantView = ({sessionUser, navigate}) => {
                             navigate={navigate}
                         />
                         ) : (
-                        <button className="edit-button" onClick={() => handleEdit(restaurant._id)}>
-                        Edit
-                        </button>
+                        <div>
+                            <button className="edit-button" onClick={() => handleEdit(restaurant._id)}>
+                            Edit
+                            </button>
+                            <button className="delete-button" onClick={() => handleDelete(restaurant._id)}>
+                            Delete
+                            </button>
+                        </div>
                     )}
                 </li>
             ))}

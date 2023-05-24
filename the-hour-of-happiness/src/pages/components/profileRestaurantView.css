@@ -48,7 +48,8 @@
     align-items: center;
 }
 
-.edit-button {
+.edit-button,
+.delete-button {
     align-self: flex-end;
     margin-top: auto;
     padding: 6px 12px;
