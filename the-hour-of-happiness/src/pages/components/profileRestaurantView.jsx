@@ -2,11 +2,14 @@ import React, {useState, useEffect } from 'react';
 import axios from 'axios';
 import './profileRestaurantView.css';
 import { EditForm } from './editRestaurantForm';
+import { DeleteModal } from './deleteModal';
 
 
 export const ProfileRestaurantView = ({sessionUser, navigate}) => {
     const [restaurants,setRestaurants] = useState([])
     const [editingRestaurantId, setEditingRestaurantId] = useState(null);
+    const [showDeleteModal, setShowDeleteModal] = useState(false);
+    const [restaurantToDelete, setRestaurantToDelete] = useState(null);
 
     useEffect(() => {
         getRestaurants();
@@ -29,17 +32,27 @@ export const ProfileRestaurantView = ({sessionUser, navigate}) => {
         setEditingRestaurantId(restaurantId);
     };
 
-    const handleDelete = async (restaurantId) => {
+    const handleDelete = (restaurant) => {
+        setRestaurantToDelete(restaurant);
+        setShowDeleteModal(true);
+      };
+    
+    const handleConfirmDelete = async () => {
         try {
-            const endpoint_URL = `http://localhost:4000/happy-hour-time/delete-happy-hour-location/${restaurantId}`;
+            const endpoint_URL = `http://localhost:4000/happy-hour-time/delete-happy-hour-location/${restaurantToDelete._id}`;
             await axios.delete(endpoint_URL);
             console.log('Restaurant deleted successfully');
+            setShowDeleteModal(false);
+            setRestaurantToDelete(null);
             getRestaurants();
         } catch (err) {
             console.log('Delete failed:', err);
         }
-      };
-    
+    }
+    const handleCancelDelete = () => {
+        setShowDeleteModal(false);
+        setEditingRestaurantId(null);
+    };
     const handleSave = async (editedRestaurant) => {
         try {
         // Perform save logic here using the editedRestaurant object
@@ -85,7 +98,7 @@ export const ProfileRestaurantView = ({sessionUser, navigate}) => {
                             <button className="edit-button" onClick={() => handleEdit(restaurant._id)}>
                             Edit
                             </button>
-                            <button className="delete-button" onClick={() => handleDelete(restaurant._id)}>
+                            <button className="delete-button" onClick={() => handleDelete(restaurant)}>
                             Delete
                             </button>
                         </div>
@@ -93,6 +106,13 @@ export const ProfileRestaurantView = ({sessionUser, navigate}) => {
                 </li>
             ))}
         </ul>
+        {showDeleteModal && (
+            <DeleteModal
+            restaurant={restaurantToDelete}
+            onConfirmDelete={handleConfirmDelete}
+            onCancelDelete={handleCancelDelete}
+            />
+        )}
        </div>
     )
 }

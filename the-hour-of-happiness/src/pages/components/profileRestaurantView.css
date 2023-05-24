@@ -51,7 +51,7 @@
 .edit-button,
 .delete-button {
     align-self: flex-end;
-    margin-top: auto;
+    margin: 5px;
     padding: 6px 12px;
     background-color: #929292;
     color: #fff;
