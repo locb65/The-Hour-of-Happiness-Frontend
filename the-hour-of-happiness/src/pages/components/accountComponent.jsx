@@ -6,6 +6,8 @@ export const AccountComponent = ({sessionUser, navigate, user, handleDeleteUser}
     const [emailInput, setEmailInput] = useState("");
     const [passwordInput, setPasswordInput] = useState("");
     const [confirmPasswordInput, setConfirmPasswordInput] = useState("");
+    const [nameInput, setNameInput] = useState("");
+    const [updatedName, setUpdatedName] = useState(sessionUser.name);
 
     // replaces password with ****
     const renderPasswordWithAsterisks = (password) => {
@@ -31,6 +33,9 @@ export const AccountComponent = ({sessionUser, navigate, user, handleDeleteUser}
     const handleUpdateClick = (e) => {
         // logic for update btn here
         console.log("Update clicked");
+        if (nameInput !== "") {
+            updateName();
+        }
         if (emailInput !== "") {
             updateEmail();
         }
@@ -39,11 +44,22 @@ export const AccountComponent = ({sessionUser, navigate, user, handleDeleteUser}
         }
     }
 
+    const updateName = async () => {
+        try {
+            const response = await axios.put(`http://localhost:4000/accounts/update-owner/${sessionUser._id}`,
+                {
+                    name: nameInput,
+                }
+            );
+            console.log(response.data);
+        } catch (error) {
+            console.log(error);
+        }
+    };
     const updateEmail = async () => {
         try {
             console.log(sessionUser._id)
-            const response = await axios.put(
-                `http://localhost:4000/accounts/update-owner/${sessionUser._id}`,
+            const response = await axios.put(`http://localhost:4000/accounts/update-owner/${sessionUser._id}`,
                 {
                 email: emailInput,
                 }
@@ -56,8 +72,7 @@ export const AccountComponent = ({sessionUser, navigate, user, handleDeleteUser}
 
       const updatePassword = async () => {
         try {
-            const response = await axios.put(
-                `http://localhost:4000/accounts/update-owner/${sessionUser._id}`,
+            const response = await axios.put(`http://localhost:4000/accounts/update-owner/${sessionUser._id}`,
                 {
                 password: passwordInput,
                 }
@@ -85,8 +100,23 @@ export const AccountComponent = ({sessionUser, navigate, user, handleDeleteUser}
         <div className="account-component-container">
             <h1>Account Page</h1>
             <div className="account-update-section">
+                <h2>Name</h2>
+                <h3>{sessionUser.name}</h3>
+                <input
+                className="name-input"
+                type="text"
+                name="name"
+                value={nameInput}
+                onChange={handleInputChange}
+                placeholder="Name"></input>
+                {/* <button className="edit-email-btn" onClick={handleEditClick}>Edit Email</button> */}
+                <div>
+                    <button className="update-name-btn" onClick={handleUpdateClick}>Update Name</button>
+                </div>
+            </div>
+            <div className="account-update-section">
                 <h2>Email</h2>
-                <p>{sessionUser.email}</p>
+                <h3>{sessionUser.email}</h3>
                 <input 
                 className="email-input" 
                 type="text" 
@@ -96,14 +126,14 @@ export const AccountComponent = ({sessionUser, navigate, user, handleDeleteUser}
                 placeholder="Email"></input>
                 {/* <button className="edit-email-btn" onClick={handleEditClick}>Edit Email</button> */}
                 <div>
-                <button className="update-email-btn" onClick={handleUpdateClick}>Update Email</button>
+                    <button className="update-email-btn" onClick={handleUpdateClick}>Update Email</button>
                 </div>
             </div>
             <div className="account-update-section">
                 <h2>Current Password</h2>
                 <p>{renderPasswordWithAsterisks(sessionUser.password)}</p>
                 <div>
-                    <h2>New Password</h2>
+                    <h3>New Password</h3>
                     <input 
                     className="password-input" 
                     type="password" 
@@ -114,7 +144,7 @@ export const AccountComponent = ({sessionUser, navigate, user, handleDeleteUser}
                     />
                 </div>
                 <div>
-                    <h2>Confirm New Password</h2>
+                    <h3>Confirm New Password</h3>
                     <input 
                     className="password-input" 
                     type="password"
