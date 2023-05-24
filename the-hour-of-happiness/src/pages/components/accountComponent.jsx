@@ -26,9 +26,9 @@ export const AccountComponent = ({sessionUser, navigate, user, handleDeleteUser}
         }
     }
 
-    const handleEditClick = (e) => {
-        // logic for edit btn
-    }
+    // const handleEditClick = (e) => {
+    //     // logic for edit btn
+    // }
 
     const handleUpdateClick = (e) => {
         // logic for update btn here
