@@ -2,6 +2,7 @@
   "name": "the-hour-of-happiness",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "dependencies": {
     "@cloudinary/react": "^1.11.2",
     "@cloudinary/url-gen": "^1.10.0",
@@ -45,6 +46,15 @@
     ]
   },
   "devDependencies": {
+    "@babel/core": "^7.21.8",
+    "@babel/preset-env": "^7.21.5",
+    "babel-jest": "^29.5.0",
+    "jest": "^27.5.1",
     "prettier": "^2.8.8"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.jsx?$": "babel-jest"
+    }
   }
 }
