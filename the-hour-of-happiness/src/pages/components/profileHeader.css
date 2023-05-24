@@ -23,7 +23,7 @@
   .profile-img-container::before {
     content: '';
     display: block;
-    padding-top: 100%; /* Creates a square space for the image container */
+    padding-top: 100%; 
   }
   
   .profile-header h1 {
