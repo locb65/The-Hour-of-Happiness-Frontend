@@ -24,7 +24,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "jest --verbose",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -47,14 +47,19 @@
   },
   "devDependencies": {
     "@babel/core": "^7.21.8",
+    "@babel/plugin-transform-modules-commonjs": "^7.21.5",
     "@babel/preset-env": "^7.21.5",
+    "@babel/preset-react": "^7.18.6",
     "babel-jest": "^29.5.0",
     "jest": "^27.5.1",
     "prettier": "^2.8.8"
   },
   "jest": {
     "transform": {
-      "^.+\\.jsx?$": "babel-jest"
-    }
+      "^.+\\.(js|jsx)$": "babel-jest"
+    },
+    "transformIgnorePatterns": [
+      "/node_modules/(?!(@cloudinary)/)"
+    ]
   }
 }
