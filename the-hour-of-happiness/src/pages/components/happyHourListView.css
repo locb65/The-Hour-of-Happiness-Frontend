@@ -15,10 +15,11 @@
 .restaurant-img-container {
     width: 17.5rem;
     height: 17.5rem;
-    margin-right: 1.5rem;
+    padding-right: 0.8rem;
+    margin-right: 0.8rem;
     margin-left: 0.8rem;
     overflow: hidden;
-    border: 1px solid #000000;
+    border-right: 2px solid #c3c3c3;
 }
 
 .restaurant-img-container img {
