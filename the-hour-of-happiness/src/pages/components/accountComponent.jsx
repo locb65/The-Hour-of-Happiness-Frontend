@@ -46,7 +46,7 @@ export const AccountComponent = ({sessionUser, navigate, user, handleDeleteUser}
 
     const updateName = async () => {
         try {
-            const response = await axios.put(`http://localhost:4000/accounts/update-owner/${sessionUser._id}`,
+            const response = await axios.put(`https://clink-city-mern-backend.herokuapp.com/accounts/update-owner/${sessionUser._id}`,
                 {
                     name: nameInput,
                 }
@@ -59,7 +59,7 @@ export const AccountComponent = ({sessionUser, navigate, user, handleDeleteUser}
     const updateEmail = async () => {
         try {
             console.log(sessionUser._id)
-            const response = await axios.put(`http://localhost:4000/accounts/update-owner/${sessionUser._id}`,
+            const response = await axios.put(`https://clink-city-mern-backend.herokuapp.com/accounts/update-owner/${sessionUser._id}`,
                 {
                 email: emailInput,
                 }
@@ -72,7 +72,7 @@ export const AccountComponent = ({sessionUser, navigate, user, handleDeleteUser}
 
       const updatePassword = async () => {
         try {
-            const response = await axios.put(`http://localhost:4000/accounts/update-owner/${sessionUser._id}`,
+            const response = await axios.put(`https://clink-city-mern-backend.herokuapp.com/accounts/update-owner/${sessionUser._id}`,
                 {
                 password: passwordInput,
                 }
@@ -85,7 +85,7 @@ export const AccountComponent = ({sessionUser, navigate, user, handleDeleteUser}
 
     const handleDelete = async(e) =>{
         // delete account logic here
-        const delete_Enpoint = `http://localhost:4000/accounts/delete-owner/${sessionUser._id}`
+        const delete_Enpoint = `https://clink-city-mern-backend.herokuapp.com/accounts/delete-owner/${sessionUser._id}`
         try {
             const res = await axios.delete(delete_Enpoint);
             console.log(res.data)

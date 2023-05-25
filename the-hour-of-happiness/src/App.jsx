@@ -14,7 +14,7 @@ import { AccountPage } from './pages/accountPage';
 import { Footer } from './pages/components/footer';
 import './App.css'
 
-axios.defaults.baseURL = 'http://localhost:4000';
+axios.defaults.baseURL = 'https://clink-city-mern-backend.herokuapp.com';
 
 export const App = () => {
   const [user, setUser] = useState(false);
@@ -46,7 +46,7 @@ export const App = () => {
     const checkAuthentication = async () => {
       try {
         // request to endpoint
-        const res = await axios.get('http://localhost:4000/check-authentication', { withCredentials: true });
+        const res = await axios.get('https://clink-city-mern-backend.herokuapp.com/check-authentication', { withCredentials: true });
         console.log(res.data)
         const isAuthenticated = res.data.authenticated;
         // condition to set user state if user is authenticated

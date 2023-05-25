@@ -28,7 +28,7 @@ export const ProfileHeader = ({ sessionUser }) => {
 //     const handleSaveClick = async () => {
 //         try {
 //             const id = sessionUser?._id
-//             const endpoint_URL = `http://localhost:4000/accounts/update-owner/${id}`
+//             const endpoint_URL = `https://clink-city-mern-backend.herokuapp.com/accounts/update-owner/${id}`
 //             const payload = { name: newName };
             
 //             await axios.put(endpoint_URL, payload);

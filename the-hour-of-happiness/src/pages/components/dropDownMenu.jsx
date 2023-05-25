@@ -21,7 +21,7 @@ export const DropDownMenu = ({user, handleLogout}) => {
 
     // const checkAuthentication = async () => {
     //     try {
-    //         const res = await axios.get('http://localhost:4000/check-authentication', { withCredentials: true });
+    //         const res = await axios.get('https://clink-city-mern-backend.herokuapp.com/check-authentication', { withCredentials: true });
     //         console.log(res.data)
     //         // setIsAuthenticated(res.data.authenticated);
     //         // console.log(isAuthenticated);
@@ -32,7 +32,7 @@ export const DropDownMenu = ({user, handleLogout}) => {
 
     const handleLogoutButton = async () => {
         try {
-            const res = await axios.post('http://localhost:4000/logout')
+            const res = await axios.post('https://clink-city-mern-backend.herokuapp.com/logout')
             if (res.status === 200) {
                 navigate('/home');
                 toggleMenu();

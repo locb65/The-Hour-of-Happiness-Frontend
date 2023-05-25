@@ -6,7 +6,7 @@ import './restaurantForm.css'
 
 
 export const RestaurantForm = ({toggleForm, sessionUser}) => {
-    const API_URL = 'http://localhost:4000/happy-hour-time/new-happy-hour-location';
+    const API_URL = 'https://clink-city-mern-backend.herokuapp.com/happy-hour-time/new-happy-hour-location';
     const cloudUrl = process.env.CLOUDINARY_API_URL 
     const preset = process.env.CLOUDINARY_UPLOAD_PRESET
     const [formData, setFormData] = useState({
@@ -80,7 +80,7 @@ export const RestaurantForm = ({toggleForm, sessionUser}) => {
         
         const newRestaurantId = res.data._id
         const ownerId = sessionUser._id
-        const UpdateOwnerUrl = `http://localhost:4000/accounts/update-owner/${ownerId}`
+        const UpdateOwnerUrl = `https://clink-city-mern-backend.herokuapp.com/accounts/update-owner/${ownerId}`
         await axios.put (UpdateOwnerUrl, { $push: {restaurants: newRestaurantId }})
 
         // Reset the form after successful submission

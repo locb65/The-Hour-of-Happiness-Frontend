@@ -19,7 +19,7 @@ export const ProfileRestaurantView = ({sessionUser, navigate}) => {
         try {
             console.log(sessionUser)
             const id = sessionUser._id
-            const endpoint_URL = `http://localhost:4000/accounts/restaurant-owners/${id}/owned-restaurants`
+            const endpoint_URL = `https://clink-city-mern-backend.herokuapp.com/accounts/restaurant-owners/${id}/owned-restaurants`
             const res = await axios.get(endpoint_URL);
             console.log(res.data);
             setRestaurants(res.data);
@@ -39,7 +39,7 @@ export const ProfileRestaurantView = ({sessionUser, navigate}) => {
     
     const handleConfirmDelete = async () => {
         try {
-            const endpoint_URL = `http://localhost:4000/happy-hour-time/delete-happy-hour-location/${restaurantToDelete._id}`;
+            const endpoint_URL = `https://clink-city-mern-backend.herokuapp.com/happy-hour-time/delete-happy-hour-location/${restaurantToDelete._id}`;
             await axios.delete(endpoint_URL);
             console.log('Restaurant deleted successfully');
             setShowDeleteModal(false);

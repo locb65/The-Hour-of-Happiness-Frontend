@@ -8,7 +8,7 @@ export const HappyHourList = ({searchResults}) => {
   useEffect(() => {
     const fetchRestaurants = async () => {
       try {
-        const response = await axios.get("http://localhost:4000/happy-hour-time");
+        const response = await axios.get("https://clink-city-mern-backend.herokuapp.com/happy-hour-time");
         setRestaurants(response.data);
         console.log(response.data);
       } catch (error) {

@@ -21,7 +21,7 @@ export const CreateAccount = () => {
 
         try {
             const res = await axios.post(
-                'http://localhost:4000/accounts/restaurant-owners/new-owner', 
+                'https://clink-city-mern-backend.herokuapp.com/accounts/restaurant-owners/new-owner', 
                 {name, email, password});
             console.log('Account Created: ', res.data)
             // using navigate to reroute after an account is created successfully

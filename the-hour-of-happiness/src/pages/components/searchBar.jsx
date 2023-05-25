@@ -12,9 +12,9 @@ export const SearchBar = ({ handleSearch }) => {
             const encodedQuery = encodeURI(query);
             let res;
             if(encodedQuery === '') {
-                res = await axios.get(`http://localhost:4000/happy-hour-time`)
+                res = await axios.get(`https://clink-city-mern-backend.herokuapp.com/happy-hour-time`)
             } else {
-                res = await axios.get(`http://localhost:4000/happy-hour-time/search/name?name=${encodedQuery}`);
+                res = await axios.get(`https://clink-city-mern-backend.herokuapp.com/happy-hour-time/search/name?name=${encodedQuery}`);
             }
             handleSearch(res.data);
             console.log(res.data);
