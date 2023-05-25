@@ -23,6 +23,8 @@ export const AccountComponent = ({sessionUser, navigate, user, handleDeleteUser}
             setPasswordInput(value);
         } else if (name === "confirmPassword") {
             setConfirmPasswordInput(value);
+        }else if (name === "name") {
+            setNameInput(value);
         }
     }
 
