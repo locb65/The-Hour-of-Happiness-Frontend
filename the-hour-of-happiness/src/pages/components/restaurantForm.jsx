@@ -38,7 +38,7 @@ export const RestaurantForm = ({toggleForm, sessionUser}) => {
             console.log(file)
             console.log(formData);
 
-            const res = await axios.post('http://api.cloudinary.com/v1_1/dk5rjoauw/upload', formData);
+            const res = await axios.post('https://api.cloudinary.com/v1_1/dk5rjoauw/upload', formData);
             console.log(res.data.secure_url)
             console.log(res.data)
             return res.data.secure_url;
