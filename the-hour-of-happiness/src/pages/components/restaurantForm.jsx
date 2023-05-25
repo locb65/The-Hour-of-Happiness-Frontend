@@ -6,7 +6,7 @@ import './restaurantForm.css'
 
 
 export const RestaurantForm = ({toggleForm, sessionUser}) => {
-    const API_URL = 'https://clink-city-mern-backend.herokuapp.com/happy-hour-time/new-happy-hour-location';
+    const API_URL = 'https://clink-city-mern-backend.herokuapp.com/location/new-happy-hour-location';
     const cloudUrl = process.env.CLOUDINARY_API_URL 
     const preset = process.env.CLOUDINARY_UPLOAD_PRESET
     const [formData, setFormData] = useState({

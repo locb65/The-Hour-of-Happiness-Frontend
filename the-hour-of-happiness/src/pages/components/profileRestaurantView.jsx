@@ -39,7 +39,7 @@ export const ProfileRestaurantView = ({sessionUser, navigate}) => {
     
     const handleConfirmDelete = async () => {
         try {
-            const endpoint_URL = `https://clink-city-mern-backend.herokuapp.com/happy-hour-time/delete-happy-hour-location/${restaurantToDelete._id}`;
+            const endpoint_URL = `https://clink-city-mern-backend.herokuapp.com/location/delete-happy-hour-location/${restaurantToDelete._id}`;
             await axios.delete(endpoint_URL);
             console.log('Restaurant deleted successfully');
             setShowDeleteModal(false);

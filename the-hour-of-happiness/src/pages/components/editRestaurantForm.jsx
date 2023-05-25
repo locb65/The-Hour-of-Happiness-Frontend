@@ -28,7 +28,7 @@ export const EditForm = ({ restaurant, onSave, onCancel, navigate}) => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-        const endpoint_URL = `https://clink-city-mern-backend.herokuapp.com/happy-hour-time/update-happy-hour-location/${editedRestaurant._id}`;
+        const endpoint_URL = `https://clink-city-mern-backend.herokuapp.com/location/update-happy-hour-location/${editedRestaurant._id}`;
         const res = await axios.put(endpoint_URL, editedRestaurant);
         console.log('Update successful:', res.data);
         onSave(editedRestaurant);
