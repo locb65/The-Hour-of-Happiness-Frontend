@@ -89,14 +89,14 @@ Welcome to Clink City. An app for consumers to find happy hour locations near th
 <details>
 
 <summary>Clich Here for SnapShot</summary>
-
+<img src="./the-hour-of-happiness/src/pages/components/img/Welcome-page.png" alt=""/>
 </details>
 
 ### Login Page
 <details>
 
 <summary>Clich Here for SnapShot</summary>
-
+<img src="./the-hour-of-happiness/src/pages/components/img/login-auth.png" alt=""/>
 </details>
 
 ### Choice Page
@@ -104,7 +104,7 @@ Welcome to Clink City. An app for consumers to find happy hour locations near th
 <details>
 
 <summary>Clich Here for SnapShot</summary>
-
+<img src="./the-hour-of-happiness/src/pages/components/img/choice-paige.png" alt=""/>
 </details>
 
 ### Home Page
@@ -112,7 +112,7 @@ Welcome to Clink City. An app for consumers to find happy hour locations near th
 <details>
 
 <summary>Clich Here for SnapShot</summary>
-
+<img src="./the-hour-of-happiness/src/pages/components/img/home-page.png" alt=""/>
 </details>
 
 ###  Profile Page
@@ -120,7 +120,7 @@ Welcome to Clink City. An app for consumers to find happy hour locations near th
 <details>
 
 <summary>Clich Here for SnapShot</summary>
-
+<img src="./the-hour-of-happiness/src/pages/components/img/profile-page.png" alt=""/>
 </details>
 
 ### Account Page
@@ -128,7 +128,7 @@ Welcome to Clink City. An app for consumers to find happy hour locations near th
 <details>
 
 <summary>Clich Here for SnapShot</summary>
-<img src="./the-hour-of-happiness/src/pages/components./img/account-page.png" alt=""/>
+<img src="./the-hour-of-happiness/src/pages/components/img/account-page.png" alt=""/>
 </details>
 
 
@@ -139,3 +139,18 @@ Welcome to Clink City. An app for consumers to find happy hour locations near th
 2. User Authentication does not persist on Page refresh
 3. Test Script not working correctly - es6 module issue with jest
 
+## Developed with:
+
+1. JavaScript
+2. ReactJS
+3. Cloudinary
+4. Axios: for API requests
+
+## Links
+
+* Backend Repo: [The Hour Of Happiness](https://github.com/locb65/The-Hour-of-Happiness-Backend)
+* Deployed Netlify Link: [Coming soon]()
+* LinkedIn: [Loc Bui - LinkedIn](https://www.linkedin.com/in/loc-bui-b574ba128/)
+* Twitter: [Coding-Locker](https://twitter.com/coding_locker)
+
+# Thank You for checking this out!
