@@ -128,7 +128,7 @@ Welcome to Clink City. An app for consumers to find happy hour locations near th
 <details>
 
 <summary>Clich Here for SnapShot</summary>
-<img src="https://github.com/locb65/The-Hour-of-Happiness-Frontend/tree/main/the-hour-of-happiness/src/pages/components/imgaccount-page.png" alt=""/>
+<img src="./the-hour-of-happiness/src/pages/components/img/account-page.png" alt=""/>
 </details>
 
 
