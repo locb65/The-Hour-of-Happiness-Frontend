@@ -4,6 +4,7 @@ import 'react-calendar/dist/Calendar.css'
 import './verifyAge.css'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { FaGlassCheers } from 'react-icons/fa'
 
 // added age verification since this is based on alcholic beverages
 export const AgeVerificationForm = () => {
@@ -36,8 +37,8 @@ export const AgeVerificationForm = () => {
 
     return (
         <div className="age-verification-container">
-            <h2>Are You Above 21 Years Old?</h2>
-            <p>Please select your Date of Birth to Conitnue</p>
+            <h2>If you are ready to be Happy <FaGlassCheers/>!</h2>
+            <p>Then Verify your age below</p>
             <div className="calendar-wrapper">
                 <Calendar 
                 className="custom-calendar" 
